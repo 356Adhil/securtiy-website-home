@@ -42,7 +42,7 @@ app.use("/faq", faqRouter);
 
 app.use("/projects-details", projects_detailsRouter);
 app.use("/projects", projectsRouter);
-app.use("/services-details", services_detailsRouter);
+app.use("/service-details", services_detailsRouter);
 app.use("/services", servicesRouter);
 app.use("/team-details", team_detailsRouter);
 app.use("/team", teamRouter);

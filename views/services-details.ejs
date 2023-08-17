@@ -7,13 +7,13 @@
     <meta charset="utf-8">
     <title>Oitech | IT Solutions & Technology HTML Template | Home Page 01</title>
     <!-- Stylesheets -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -69,7 +69,7 @@
                 <!-- Main box -->
                 <div class="main-box">
                     <div class="logo-box">
-                        <div class="logo"><a href="index-2.html"><img src="images/logo.png" alt="" title="Oitech"></a>
+                        <div class="logo"><a href="index-2.html"><img src="../images/logo.png" alt="" title="Oitech"></a>
                         </div>
                     </div>
 
@@ -135,7 +135,7 @@
                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                 <nav class="menu-box">
                     <div class="upper-box">
-                        <div class="nav-logo"><a href="index-2.html"><img src="images/logo.png" alt="" title=""></a>
+                        <div class="nav-logo"><a href="index-2.html"><img src="../images/logo.png" alt="" title=""></a>
                         </div>
                         <div class="close-btn"><i class="icon fa fa-times"></i></div>
                     </div>
@@ -202,7 +202,7 @@
                     <div class="inner-container">
                         <!--Logo-->
                         <div class="logo">
-                            <a href="index-2.html" title=""><img src="images/logo-2.png" alt="" title=""></a>
+                            <a href="index-2.html" title=""><img src="../images/logo-2.png" alt="" title=""></a>
                         </div>
 
                         <!--Right Col-->
@@ -226,7 +226,7 @@
         <!--End Main Header -->
 
         <!-- Start main-content -->
-        <section class="page-title" style="background-image: url(images/background/page-title.jpg);">
+        <section class="page-title" style="background-image: url(../images/background/page-title.jpg);">
             <div class="auto-container">
                 <div class="title-outer">
                     <h1 class="title">Service Details</h1>
@@ -267,9 +267,9 @@
 
                             <!--End Services Details Sidebar Single-->
                             <div class="sidebar-widget banner-widget">
-                                <div class="widget-content" style="background-image: url(images/resource/contact.jpg);">
+                                <div class="widget-content" style="background-image: url(../images/resource/contact.jpg);">
                                     <div class="shape"
-                                        style="background-image: url(images/resource/overlay-shape.png);"></div>
+                                        style="background-image: url(../images/resource/overlay-shape.png);"></div>
                                     <div class="content-box">
                                         <div class="icon-box">
                                             <i class="lnr lnr-icon-pie-chart"></i>
@@ -297,10 +297,10 @@
                     <!--Start Services Details Content-->
                     <div class="col-xl-8 col-lg-8">
                         <div class="services-details__content">
-                            <img src="images/resource/service-details.jpg" alt="" />
-                            <h2 class="mt-4">Service Overview</h2>
+                            <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${selectedService.image }` %>" alt="" />
+                            <h2 class="mt-4"><%= selectedService.title %></h2>
                             <p>
-                                <%= serviceData.response[1].features %>
+                                <%= selectedService.description %>
                             </p>
 
                             <!-- <div class="content mt-40">
@@ -384,7 +384,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer">
-            <div class="bg-image" style="background-image: url(images/background/2.jpg)"></div>
+            <div class="bg-image" style="background-image: url(../images/background/2.jpg)"></div>
 
             <!--Widgets Section-->
             <div class="widgets-section">
@@ -393,7 +393,7 @@
                         <!--Footer Column-->
                         <div class="footer-column col-xl-3 col-lg-12 col-md-6 col-sm-12">
                             <div class="footer-widget about-widget">
-                                <div class="logo"><a href="index-2.html"><img src="images/logo.png" alt=""></a></div>
+                                <div class="logo"><a href="index-2.html"><img src="../images/logo.png" alt=""></a></div>
                                 <div class="text">Desires to obtain pain of itself, because it is pain, but occasionally
                                     circumstances.</div>
                                 <ul class="social-icon-two">
@@ -455,22 +455,22 @@
                                 <div class="widget-content">
                                     <div class="outer clearfix">
                                         <figure class="image">
-                                            <a href="#"><img src="images/resource/project-thumb-1.jpg" alt=""></a>
+                                            <a href="#"><img src="../images/resource/project-thumb-1.jpg" alt=""></a>
                                         </figure>
                                         <figure class="image">
-                                            <a href="#"><img src="images/resource/project-thumb-2.jpg" alt=""></a>
+                                            <a href="#"><img src="../images/resource/project-thumb-2.jpg" alt=""></a>
                                         </figure>
                                         <figure class="image">
-                                            <a href="#"><img src="images/resource/project-thumb-3.jpg" alt=""></a>
+                                            <a href="#"><img src="../images/resource/project-thumb-3.jpg" alt=""></a>
                                         </figure>
                                         <figure class="image">
-                                            <a href="#"><img src="images/resource/project-thumb-4.jpg" alt=""></a>
+                                            <a href="#"><img src="../images/resource/project-thumb-4.jpg" alt=""></a>
                                         </figure>
                                         <figure class="image">
-                                            <a href="#"><img src="images/resource/project-thumb-5.jpg" alt=""></a>
+                                            <a href="#"><img src="../images/resource/project-thumb-5.jpg" alt=""></a>
                                         </figure>
                                         <figure class="image">
-                                            <a href="#"><img src="images/resource/project-thumb-6.jpg" alt=""></a>
+                                            <a href="#"><img src="../images/resource/project-thumb-6.jpg" alt=""></a>
                                         </figure>
                                     </div>
                                 </div>
@@ -502,17 +502,17 @@
     <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
 
-    <script src="js/jquery.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.fancybox.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/appear.js"></script>
-    <script src="js/select2.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/owl.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.fancybox.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/wow.js"></script>
+    <script src="../js/appear.js"></script>
+    <script src="../js/select2.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/owl.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 <!-- Mirrored from kodesolution.com/html/2022/oitech-html/page-service-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:03 GMT -->
