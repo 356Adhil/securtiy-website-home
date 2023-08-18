@@ -250,7 +250,7 @@
                         </div>
                         <!-- Contact Form -->
                         <form id="contact_form" name="contact_form" class=""
-                            action="https://kodesolution.com/html/2022/oitech-html/includes/sendmail.php" method="post">
+                            action="/Contact/submit" method="post">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="mb-3">
@@ -290,6 +290,8 @@
                                         message</span></button>
                                 <button type="reset" class="theme-btn btn-style-one"><span
                                         class="btn-title">Reset</span></button>
+                                <!-- <button type="reset" class="theme-btn btn-style-one"><span
+                                        class="btn-title">Whatsapp Us</span></button> -->
                             </div>
                         </form>
                         <!-- Contact Form Validation-->
@@ -299,9 +301,6 @@
                             <div class="sec-title">
                                 <span class="sub-title">Need any help?</span>
                                 <h2>Get in touch with us</h2>
-                                <div class="text">
-                                    <%= contactUsData.response[0].message %>
-                                </div>
                             </div>
                             <ul class="list-unstyled contact-details__info">
                                 <li>
