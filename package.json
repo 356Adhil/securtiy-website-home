@@ -20,5 +20,17 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  }
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datahex-in/security-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/datahex-in/security-website/issues"
+  },
+  "homepage": "https://github.com/datahex-in/security-website#readme",
+  "description": ""
 }
