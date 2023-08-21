@@ -5,6 +5,12 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const bodyParser = require("body-parser");
 
+const connectDB = require("./config/db");
+
+// Load env vars
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config/.env" });
+
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var NewsRouter = require("./routes/NewsDetails");
@@ -22,6 +28,9 @@ var teamRouter = require("./routes/team");
 var testimonialRouter = require("./routes/testimonial");
 
 var app = express();
+
+// Connect to MongoDB database
+connectDB();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

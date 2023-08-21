@@ -1,23 +1,37 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+const AboutUs = require("../models/AboutUs");
+const OurService = require("../models/OurService");
+const OurTeam = require("../models/OurTeam");
+const ContactUs = require("../models/ContactUs");
+
 
 /* GET home page. */
 router.get("/", async (req, res, next) => {
   try {
+
+    const aboutUsPromise = await AboutUs.find()
+
+    const ourServicePromise = await OurService.find()
+
+    const ourTeamPromise = await OurTeam.find()
+
+    const contactUsPromise = await ContactUs.find()
+
     // Fetch data from the "about-us," "our-service," "our-team," and "contact-us" APIs
-    const aboutUsPromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/about-us"
-    );
-    const ourServicePromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/our-service"
-    );
-    const ourTeamPromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/our-team"
-    );
-    const contactUsPromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/contact-us"
-    );
+    // const aboutUsPromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/about-us"
+    // );
+    // const ourServicePromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/our-service"
+    // );
+    // const ourTeamPromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/our-team"
+    // );
+    // const contactUsPromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/contact-us"
+    // );
 
     // Wait for all API requests to complete
     const [
@@ -33,10 +47,10 @@ router.get("/", async (req, res, next) => {
     ]);
 
     // Extract data from the API responses
-    const aboutUsData = aboutUsResponse.data;
-    const ourServiceData = ourServiceResponse.data;
-    const ourTeamData = ourTeamResponse.data;
-    const contactUsData = contactUsResponse.data;
+    const aboutUsData = aboutUsResponse;
+    const ourServiceData = ourServiceResponse;
+    const ourTeamData = ourTeamResponse;
+    const contactUsData = contactUsResponse;
 
     // Console log the fetched data
     console.log("About Us Data:", aboutUsData);

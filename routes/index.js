@@ -1,37 +1,63 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+const Banner = require("../models/Banner");
+const AboutUs = require("../models/AboutUs");
+const OurService = require("../models/OurService");
+const Testimonial = require("../models/Testimonial");
+const News = require("../models/News");
+const ContactUs = require("../models/ContactUs");
+const OurSpeciality = require("../models/OurSpeciality");
+const DisplayCount = require("../models/DisplayCount");
 
 /* GET home page with API data. */
 router.get("/", async (req, res, next) => {
   try {
+
+    const bannerPromise = await Banner.find()
+
+    const aboutUsPromise = await AboutUs.find()
+
+    const ourServicePromise = await OurService.find()
+
+    const testimonialPromise = await Testimonial.find()
+
+    const newsPromise = await News.find()
+
+    const contactUsPromise = await ContactUs.find()
+
+    const ourSpecialityPromise = await OurSpeciality.find()
+
+    const displayCountPromise = await DisplayCount.find()
+
     // Fetch data from all APIs
-    const bannerPromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/banner"
-    );
-    const aboutUsPromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/about-us"
-    );
-    const ourServicePromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/our-service"
-    );
-    const testimonialPromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/testimonial"
-    );
-    const newsPromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/news"
-    );
-    const contactUsPromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/contact-us"
-    );
-    const ourSpecialityPromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/our-speciality"
-    );
-    const displayCountPromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/display-count"
-    );
+    // const bannerPromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/banner"
+    // );
+    // const aboutUsPromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/about-us"
+    // );
+    // const ourServicePromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/our-service"
+    // );
+    // const testimonialPromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/testimonial"
+    // );
+    // const newsPromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/news"
+    // );
+    // const contactUsPromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/contact-us"
+    // );
+    // const ourSpecialityPromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/our-speciality"
+    // );
+    // const displayCountPromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/display-count"
+    // );
 
     // Wait for all API requests to complete
+    
     const [
       bannerResponse,
       aboutUsResponse,
@@ -53,14 +79,14 @@ router.get("/", async (req, res, next) => {
     ]);
 
     // Extract data from the API responses
-    const bannerData = bannerResponse.data;
-    const aboutUsData = aboutUsResponse.data;
-    const ourServiceData = ourServiceResponse.data;
-    const testimonialData = testimonialResponse.data;
-    const newsData = newsResponse.data;
-    const contactUsData = contactUsResponse.data;
-    const ourSpecialityData = ourSpecialityResponse.data;
-    const displayCountData = displayCountResponse.data;
+    const bannerData = bannerResponse;
+    const aboutUsData = aboutUsResponse;
+    const ourServiceData = ourServiceResponse;
+    const testimonialData = testimonialResponse;
+    const newsData = newsResponse;
+    const contactUsData = contactUsResponse;
+    const ourSpecialityData = ourSpecialityResponse;
+    const displayCountData = displayCountResponse;
 
     // Console log the fetched data
     console.log("Banner Data:", bannerData);

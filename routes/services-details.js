@@ -1,35 +1,47 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+const OurService = require("../models/OurService");
+const faq = require("../models/faq");
+const ContactUs = require("../models/ContactUs");
 
 router.get("/:id", async (req, res, next) => {
   try {
     const serviceId = req.params.id;
 
+    const serviceResponse = await OurService.find()
+
+    const contactUsPromise = await ContactUs.find()
+    
+    const faqResponse = await faq.find()
+    
+    const selectedService = await OurService.findOne({ _id: serviceId });
+
     // Fetch data from the "our-service" API
-    const serviceResponse = await axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/our-service"
-    );
+    // const serviceResponse = await axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/our-service"
+    // );
 
     // Fetch data from the "faq" API
-    const faqResponse = await axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/faq"
-    );
+    // const faqResponse = await axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/faq"
+    // );
 
-    const contactUsPromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/contact-us"
-    );
+    // const contactUsPromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/contact-us"
+    // );
 
     // Wait for all API requests to complete
     const [contactUsResponse] = await Promise.all([contactUsPromise]);
 
     // Extract data from the API responses
-    const serviceData = serviceResponse.data;
-    const faqData = faqResponse.data;
-    const contactUsData = contactUsResponse.data;
+    const serviceData = serviceResponse;
+    const faqData = faqResponse;
+    const contactUsData = contactUsResponse;
 
     // Find the selected service by _id
-    const selectedService = serviceData.response.find(service => service._id === serviceId);
+
+    console.log(selectedService)
 
     // Log the fetched data
     console.log("Fetched Service Data:", serviceData);

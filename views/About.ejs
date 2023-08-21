@@ -250,11 +250,11 @@
                             <div class="sec-title">
                                 <span class="sub-title">About Our Company</span>
                                 <h2>
-                                    <%= aboutUsData.response[0].vision %>
+                                    <%= aboutUsData[0].vision %>
                                 </h2>
 
                                 <div class="text">
-                                    <%= aboutUsData.response[0].shortDescription %>
+                                    <%= aboutUsData[0].shortDescription %>
                                 </div>
                             </div>
 
@@ -292,7 +292,7 @@
                             <div class="image-box">
 
                                 <figure class="image wow fadeIn"><img
-                                        src="<%=`https://event-manager.syd1.cdn.digitaloceanspaces.com/${aboutUsData.response[0].image}` %>"
+                                        src="<%=`https://event-manager.syd1.cdn.digitaloceanspaces.com/${aboutUsData[0].image}` %>"
                                         alt="about img"></figure>
                                 <div class="completed-projects">
                                     <strong>870+</strong>
@@ -319,7 +319,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <!-- Feature Block Two -->
-                    <% for (const service of ourServiceData.response) { %>
+                    <% for (const service of ourServiceData) { %>
                         <div class="feature-block-two dark col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp">
                             <div class="inner-box ">
                                 <!-- <i class="icon flaticon-business-011-dollar"></i> -->
@@ -362,7 +362,7 @@
 
 
                         <!-- Project Block -->
-                        <% for (const teamMember of ourTeamData.response) { %>
+                        <% for (const teamMember of ourTeamData) { %>
                             <div class="team-block-two col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
                                 <div class="inner-box">
                                     <div class="info-box">
@@ -445,7 +445,7 @@
                 <div class="row">
                     <!-- Team block -->
 
-                    <% for (const teamMember of ourTeamData.response) { %>
+                    <% for (const teamMember of ourTeamData) { %>
                         <div class="team-block-two col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
                             <div class="inner-box">
                                 <div class="info-box">
@@ -574,16 +574,16 @@
                                     circumstances.</div>
                                 <ul class="social-icon-two">
                                     <li><a href="#"><i class="fab fa-linkedin"></i></a>
-                                        <%= contactUsData.response[0].linkedin %>
+                                        <%= contactUsData[0].linkedin %>
                                     </li>
                                     <li><a href="#"><i class="fab fa-facebook"></i></a>
-                                        <%= contactUsData.response[0].facebook %>
+                                        <%= contactUsData[0].facebook %>
                                     </li>
                                     <li><a href="#"><i class="fab fa-whatsapp"></i></a>
-                                        <%= contactUsData.response[0].whatsapp %>
+                                        <%= contactUsData[0].whatsapp %>
                                     </li>
                                     <li><a href="#"><i class="fab fa-instagram"></i></a>
-                                        <%= contactUsData.response[0].instagram %>
+                                        <%= contactUsData[0].instagram %>
                                     </li>
                                 </ul>
                             </div>
@@ -609,15 +609,15 @@
                                 <h3 class="widget-title">Contact</h3>
                                 <div class="widget-content">
                                     <div class="text">
-                                        <%= contactUsData.response[0].address %>
+                                        <%= contactUsData[0].address %>
                                     </div>
                                     <ul class="contact-info">
                                         <li><i class="fa fa-envelope"></i> <a href="mailto:needhelp@yourdomain.com"></a>
-                                            <%= contactUsData.response[0].email %>
+                                            <%= contactUsData[0].email %>
                                                 </a><br>
                                         </li>
                                         <li><i class="fa fa-phone-square"></i> <a href="tel:+926668880000">
-                                                <%= contactUsData.response[0].mobile %>
+                                                <%= contactUsData[0].mobile %>
                                             </a><br></li>
                                     </ul>
                                 </div>

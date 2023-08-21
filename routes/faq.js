@@ -1,20 +1,27 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+const faq = require("../models/faq");
+const ContactUs = require("../models/ContactUs");
 
 router.get("/", async (req, res, next) => {
   try {
+
+    const faqResponse = await faq.find()
+
+    const contactUsPromise = await ContactUs.find()
+
     // Fetch data from the "faq" API
-    const faqResponse = await axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/faq"
-    );
-    const contactUsPromise = axios.get(
-      "https://securtity-website.azurewebsites.net/api/v1/contact-us"
-    );
+    // const faqResponse = await axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/faq"
+    // );
+    // const contactUsPromise = axios.get(
+    //   "https://securtity-website.azurewebsites.net/api/v1/contact-us"
+    // );
     const [contactUsResponse] = await Promise.all([contactUsPromise]);
     // Extract data from the API response
-    const faqData = faqResponse.data;
-    const contactUsData = contactUsResponse.data;
+    const faqData = faqResponse;
+    const contactUsData = contactUsResponse;
 
     // Log the fetched data
     console.log("Fetched FAQ Data:", faqData);
