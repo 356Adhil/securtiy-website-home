@@ -59,4 +59,50 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.post("/submit", async (req, res, next) => {
+  try {
+    const {
+      form_name,
+      form_email,
+      form_subject,
+      form_phone,
+      form_message,
+    } = req.body;
+
+    console.log("form_message......")
+    console.log(form_message)
+    // Prepare the data to send to the external API
+    const requestData = {
+      name: form_name,
+      email: form_email,
+      phone: form_phone,
+      message: form_message,
+      services: form_subject,
+    };
+
+    // Post the form data to the external API
+    const contactUsPostResponse = await axios.post(
+      "https://securtity-website.azurewebsites.net/api/v1/enquiry",
+      requestData
+    );
+
+    // Fetch data from the external API
+    const contactUsResponse = await axios.get(
+      "https://securtity-website.azurewebsites.net/api/v1/enquiry"
+    );
+
+    // Extract data from API responses
+    const contactUsPostData = contactUsPostResponse.data;
+    const contactUsData = contactUsResponse.data;
+
+    console.log("Contact Us Post Data:", contactUsPostData);
+    console.log("Contact Us Data:", contactUsData);
+
+    res.status(200).json({ message: "Form data submitted successfully!" });
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    res.status(500).json({ error: "An error occurred while submitting the form." });
+  }
+});
+
 module.exports = router;

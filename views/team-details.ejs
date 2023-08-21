@@ -7,13 +7,13 @@
     <meta charset="utf-8">
     <title>Oitech | IT Solutions & Technology HTML Template | Home Page 01</title>
     <!-- Stylesheets -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -226,7 +226,7 @@
         <!--End Main Header -->
 
         <!-- Start main-content -->
-        <section class="page-title" style="background-image: url(images/background/page-title.jpg);">
+        <section class="page-title" style="background-image: url(../images/background/page-title.jpg);">
             <div class="auto-container">
                 <div class="title-outer">
                     <h1 class="title">Team Details</h1>
@@ -248,7 +248,7 @@
                         <div class="col-xl-6 col-lg-6">
                             <div class="team-details__top-left">
                                 <div class="team-details__top-img"> <img
-                                        src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${ourTeamData[0].image }` %>"
+                                        src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${selectedTeam.image }` %>"
                                         alt="img">
                                     <div class="team-details__big-text"></div>
                                 </div>
@@ -258,10 +258,10 @@
                             <div class="team-details__top-right">
                                 <div class="team-details__top-content">
                                     <h3 class="team-details__top-name">
-                                        <%= ourTeamData[0].name %>
+                                        <%= selectedTeam.name %>
                                     </h3>
                                     <p class="team-details__top-title">
-                                        <%= ourTeamData[0].designation %>
+                                        <%= selectedTeam.designation %>
                                     </p>
                                     <div class="team-details__social">
                                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -270,7 +270,7 @@
                                         <a href="#"><i class="fab fa-instagram"></i></a>
                                     </div>
                                     <p class="team-details__top-text-1">
-                                        <%= ourTeamData[0].description %>
+                                        <%= selectedTeam.description %>
                                     </p>
 
                                 </div>
@@ -336,7 +336,7 @@
                     <div class="col-lg-8">
                         <!-- Contact Form -->
                         <form id="contact_form" name="contact_form" class=""
-                            action="https://kodesolution.com/html/2022/oitech-html/includes/sendmail.php" method="post">
+                            action="/Contact/submit" method="post">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="mb-3">
@@ -387,7 +387,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer">
-            <div class="bg-image" style="background-image: url(images/background/2.jpg)"></div>
+            <div class="bg-image" style="background-image: url(../images/background/2.jpg)"></div>
 
             <!--Widgets Section-->
             <div class="widgets-section">
@@ -396,7 +396,7 @@
                         <!--Footer Column-->
                         <div class="footer-column col-xl-3 col-lg-12 col-md-6 col-sm-12">
                             <div class="footer-widget about-widget">
-                                <div class="logo"><a href="index-2.html"><img src="images/logo.png" alt=""></a></div>
+                                <div class="logo"><a href="index-2.html"><img src="../images/logo.png" alt=""></a></div>
                                 <div class="text">Desires to obtain pain of itself, because it is pain, but occasionally
                                     circumstances.</div>
                                 <ul class="social-icon-two">
@@ -458,22 +458,22 @@
                                 <div class="widget-content">
                                     <div class="outer clearfix">
                                         <figure class="image">
-                                            <a href="#"><img src="images/resource/project-thumb-1.jpg" alt=""></a>
+                                            <a href="#"><img src="../images/resource/project-thumb-1.jpg" alt=""></a>
                                         </figure>
                                         <figure class="image">
-                                            <a href="#"><img src="images/resource/project-thumb-2.jpg" alt=""></a>
+                                            <a href="#"><img src="../images/resource/project-thumb-2.jpg" alt=""></a>
                                         </figure>
                                         <figure class="image">
-                                            <a href="#"><img src="images/resource/project-thumb-3.jpg" alt=""></a>
+                                            <a href="#"><img src="../images/resource/project-thumb-3.jpg" alt=""></a>
                                         </figure>
                                         <figure class="image">
-                                            <a href="#"><img src="images/resource/project-thumb-4.jpg" alt=""></a>
+                                            <a href="#"><img src="../images/resource/project-thumb-4.jpg" alt=""></a>
                                         </figure>
                                         <figure class="image">
-                                            <a href="#"><img src="images/resource/project-thumb-5.jpg" alt=""></a>
+                                            <a href="#"><img src="../images/resource/project-thumb-5.jpg" alt=""></a>
                                         </figure>
                                         <figure class="image">
-                                            <a href="#"><img src="images/resource/project-thumb-6.jpg" alt=""></a>
+                                            <a href="#"><img src="../images/resource/project-thumb-6.jpg" alt=""></a>
                                         </figure>
                                     </div>
                                 </div>
@@ -505,21 +505,21 @@
     <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
 
-    <script src="js/jquery.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.fancybox.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/appear.js"></script>
-    <script src="js/select2.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/owl.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.fancybox.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/wow.js"></script>
+    <script src="../js/appear.js"></script>
+    <script src="../js/select2.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/owl.js"></script>
+    <script src="../js/script.js"></script>
 
     <!-- form submit -->
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/jquery.form.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/jquery.form.min.js"></script>
     <script>
         (function ($) {
             $("#contact_form").validate({
