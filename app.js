@@ -51,7 +51,7 @@ app.use("/About", AboutRouter);
 app.use("/Contact", ContactRouter);
 app.use("/faq", faqRouter);
 
-app.use("/projects-details", projects_detailsRouter);
+app.use("/project-details", projects_detailsRouter);
 app.use("/projects", projectsRouter);
 app.use("/service-details", services_detailsRouter);
 app.use("/services", servicesRouter);

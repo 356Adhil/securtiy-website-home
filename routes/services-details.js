@@ -4,6 +4,7 @@ const axios = require("axios");
 const OurService = require("../models/OurService");
 const faq = require("../models/faq");
 const ContactUs = require("../models/ContactUs");
+const Gallery = require("../models/Gallery");
 
 router.get("/:id", async (req, res, next) => {
   try {
@@ -14,30 +15,19 @@ router.get("/:id", async (req, res, next) => {
     const contactUsPromise = await ContactUs.find()
     
     const faqResponse = await faq.find()
+
+    const galleryPromise = await Gallery.find()
     
     const selectedService = await OurService.findOne({ _id: serviceId });
-
-    // Fetch data from the "our-service" API
-    // const serviceResponse = await axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/our-service"
-    // );
-
-    // Fetch data from the "faq" API
-    // const faqResponse = await axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/faq"
-    // );
-
-    // const contactUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/contact-us"
-    // );
-
+    
     // Wait for all API requests to complete
-    const [contactUsResponse] = await Promise.all([contactUsPromise]);
+    const [contactUsResponse, galleryResponse] = await Promise.all([contactUsPromise, galleryPromise]);
 
     // Extract data from the API responses
     const serviceData = serviceResponse;
     const faqData = faqResponse;
     const contactUsData = contactUsResponse;
+    const galleryData = galleryResponse;
 
     // Find the selected service by _id
 
@@ -52,6 +42,7 @@ router.get("/:id", async (req, res, next) => {
     // Render the EJS template with the fetched data and selected service
     res.render("services-details", {
       title: "Service Details",
+      galleryData,
       serviceData,
       faqData,
       contactUsData,

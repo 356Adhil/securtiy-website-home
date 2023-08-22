@@ -9,10 +9,13 @@ const News = require("../models/News");
 const ContactUs = require("../models/ContactUs");
 const OurSpeciality = require("../models/OurSpeciality");
 const DisplayCount = require("../models/DisplayCount");
+const Gallery = require("../models/Gallery");
 
 /* GET home page with API data. */
 router.get("/", async (req, res, next) => {
   try {
+
+    const galleryPromise = await Gallery.find()
 
     const bannerPromise = await Banner.find()
 
@@ -30,35 +33,12 @@ router.get("/", async (req, res, next) => {
 
     const displayCountPromise = await DisplayCount.find()
 
-    // Fetch data from all APIs
-    // const bannerPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/banner"
-    // );
-    // const aboutUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/about-us"
-    // );
-    // const ourServicePromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/our-service"
-    // );
-    // const testimonialPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/testimonial"
-    // );
-    // const newsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/news"
-    // );
-    // const contactUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/contact-us"
-    // );
-    // const ourSpecialityPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/our-speciality"
-    // );
-    // const displayCountPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/display-count"
-    // );
+    console.log(galleryPromise)
 
     // Wait for all API requests to complete
     
     const [
+      galleryResponse,
       bannerResponse,
       aboutUsResponse,
       ourServiceResponse,
@@ -68,6 +48,7 @@ router.get("/", async (req, res, next) => {
       ourSpecialityResponse,
       displayCountResponse,
     ] = await Promise.all([
+      galleryPromise,
       bannerPromise,
       aboutUsPromise,
       ourServicePromise,
@@ -79,6 +60,7 @@ router.get("/", async (req, res, next) => {
     ]);
 
     // Extract data from the API responses
+    const galleryData = galleryResponse;
     const bannerData = bannerResponse;
     const aboutUsData = aboutUsResponse;
     const ourServiceData = ourServiceResponse;
@@ -89,6 +71,7 @@ router.get("/", async (req, res, next) => {
     const displayCountData = displayCountResponse;
 
     // Console log the fetched data
+    console.log("Gallery Data:", galleryData);
     console.log("Banner Data:", bannerData);
     console.log("About Us Data:", aboutUsData);
     console.log("Our Service Data:", ourServiceData);
@@ -101,6 +84,7 @@ router.get("/", async (req, res, next) => {
     // Render the EJS template with the fetched data
     res.render("index", {
       title: "API Data in EJS",
+      galleryData,
       bannerData,
       aboutUsData,
       ourServiceData,

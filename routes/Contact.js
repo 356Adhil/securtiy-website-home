@@ -6,23 +6,11 @@ const OurTeam = require("../models/OurTeam");
 const OurService = require("../models/OurService");
 const AboutUs = require("../models/AboutUs");
 const Enquiry = require("../models/Enquiry");
+const Gallery = require("../models/Gallery");
 
 /* GET home page. */
 router.get("/", async (req, res, next) => {
   try {
-    // Fetch data from the "about-us," "our-service," "our-team," and "contact-us" APIs
-    // const aboutUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/about-us"
-    // );
-    // const ourServicePromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/our-service"
-    // );
-    // const ourTeamPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/our-team"
-    // );
-    // const contactUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/contact-us"
-    // );
 
     const aboutUsPromise = await AboutUs.find()
 
@@ -32,13 +20,17 @@ router.get("/", async (req, res, next) => {
 
     const contactUsPromise = await ContactUs.find()
 
+    const galleryPromise = await Gallery.find()
+
     // Wait for all API requests to complete
     const [
+      galleryResponse,
       aboutUsResponse,
       ourServiceResponse,
       ourTeamResponse,
       contactUsResponse,
     ] = await Promise.all([
+      galleryPromise,
       aboutUsPromise,
       ourServicePromise,
       ourTeamPromise,
@@ -46,6 +38,8 @@ router.get("/", async (req, res, next) => {
     ]);
 
     // Extract data from the API responses
+
+    const galleryData = galleryResponse;
     const aboutUsData = aboutUsResponse;
     const ourServiceData = ourServiceResponse;
     const ourTeamData = ourTeamResponse;
@@ -60,6 +54,7 @@ router.get("/", async (req, res, next) => {
     // Render the EJS template with the fetched data
     res.render("Contact", {
       title: "Express",
+      galleryData,
       aboutUsData,
       ourServiceData,
       ourTeamData,

@@ -4,6 +4,7 @@ const axios = require("axios");
 const News = require("../models/News");
 const ContactUs = require("../models/ContactUs");
 const AboutUs = require("../models/AboutUs");
+const Gallery = require("../models/Gallery");
 
 router.get("/", async (req, res, next) => {
   try {
@@ -14,24 +15,18 @@ router.get("/", async (req, res, next) => {
 
     const aboutUsPromise = await AboutUs.find()
 
-    // Fetch data from the "about-us" and "news" APIs
-    // const aboutUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/about-us"
-    // );
-    // const newsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/news"
-    // );
-    // const contactUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/contact-us"
-    // );
+    const galleryPromise = await Gallery.find()
+
+
     // Wait for both API requests to complete
-    const [aboutUsResponse, newsResponse, contactUsResponse] =
-      await Promise.all([aboutUsPromise, newsPromise, contactUsPromise]);
+    const [aboutUsResponse, newsResponse, contactUsResponse, galleryResponse] =
+      await Promise.all([aboutUsPromise, newsPromise, contactUsPromise, galleryPromise]);
 
     // Extract data from the API responses
     const aboutUsData = aboutUsResponse;
     const newsData = newsResponse;
     const contactUsData = contactUsResponse;
+    const galleryData = galleryResponse;
     // Log the fetched data
     console.log("About Us Data:", aboutUsData);
     console.log("News Data:", newsData);
@@ -42,6 +37,7 @@ router.get("/", async (req, res, next) => {
       aboutUsData,
       newsData,
       contactUsData,
+      galleryData,
     });
   } catch (error) {
     console.error("Error fetching data:", error);

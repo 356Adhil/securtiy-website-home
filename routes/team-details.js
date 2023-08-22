@@ -3,6 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 const OurTeam = require("../models/OurTeam");
 const ContactUs = require("../models/ContactUs");
+const Gallery = require("../models/Gallery");
 
 router.get("/:id", async (req, res, next) => {
   try {
@@ -12,18 +13,14 @@ router.get("/:id", async (req, res, next) => {
 
     const contactUsPromise = await ContactUs.find()
 
-    // Fetch data from the "our-team" API
-    // const ourTeamResponse = await axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/our-team"
-    // );
-    // const contactUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/contact-us"
-    // );
+    const galleryPromise = await Gallery.find()
+
     // Wait for all API requests to complete
-    const [contactUsResponse] = await Promise.all([contactUsPromise]);
+    const [contactUsResponse, galleryResponse] = await Promise.all([contactUsPromise, galleryPromise]);
     // Extract data from the API response
     const ourTeamData = ourTeamResponse;
     const contactUsData = contactUsResponse;
+    const galleryData = galleryResponse;
 
         // Find the selected team by _id
         const selectedTeam = await OurTeam.findOne({ _id: teamId });
@@ -38,6 +35,7 @@ router.get("/:id", async (req, res, next) => {
       ourTeamData,
       contactUsData,
       selectedTeam,
+      galleryData,
     });
   } catch (error) {
     console.error("Error fetching data:", error);

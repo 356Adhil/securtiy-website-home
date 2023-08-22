@@ -5,6 +5,7 @@ const News = require("../models/News");
 const Testimonial = require("../models/Testimonial");
 const ContactUs = require("../models/ContactUs");
 const AboutUs = require("../models/AboutUs");
+const Gallery = require("../models/Gallery");
 
 router.get("/", async (req, res, next) => {
   try {
@@ -17,19 +18,7 @@ router.get("/", async (req, res, next) => {
 
     const contactUsPromise = await ContactUs.find()
 
-    // Fetch data from the "about-us," "news," "testimonial," and "contact-us" APIs
-    // const aboutUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/about-us"
-    // );
-    // const newsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/news"
-    // );
-    // const testimonialPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/testimonial"
-    // );
-    // const contactUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/contact-us"
-    // );
+    const galleryPromise = await Gallery.find()
 
     // Wait for all API requests to complete
     const [
@@ -37,11 +26,13 @@ router.get("/", async (req, res, next) => {
       newsResponse,
       testimonialResponse,
       contactUsResponse,
+      galleryResponse,
     ] = await Promise.all([
       aboutUsPromise,
       newsPromise,
       testimonialPromise,
       contactUsPromise,
+      galleryPromise,
     ]);
 
     // Extract data from the API responses
@@ -49,6 +40,7 @@ router.get("/", async (req, res, next) => {
     const newsData = newsResponse;
     const testimonialData = testimonialResponse;
     const contactUsData = contactUsResponse;
+    const galleryData = galleryResponse;
 
     // Log the fetched data
     console.log("About Us Data:", aboutUsData);
@@ -59,6 +51,7 @@ router.get("/", async (req, res, next) => {
     // Render the EJS template with the fetched data
     res.render("testimonial", {
       title: "Express",
+      galleryData,
       aboutUsData,
       newsData,
       testimonialData,

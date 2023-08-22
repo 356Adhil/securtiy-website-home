@@ -4,9 +4,12 @@ const axios = require("axios");
 const News = require("../models/News");
 const ContactUs = require("../models/ContactUs");
 const AboutUs = require("../models/AboutUs");
+const Gallery = require("../models/Gallery");
 
-router.get("/", async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
   try {
+
+    const newsId = req.params.id;
 
     const newsPromise = await News.find()
 
@@ -14,25 +17,21 @@ router.get("/", async (req, res, next) => {
 
     const aboutUsPromise = await AboutUs.find()
 
-    // Fetch data from the "about-us," "news," and "contact-us" APIs
-    // const aboutUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/about-us"
-    // );
-    // const newsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/news"
-    // );
-    // const contactUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/contact-us"
-    // );
+    const galleryPromise = await Gallery.find()
+
+    const selectedNews = await News.findOne({ _id: newsId });
+
+
 
     // Wait for all API requests to complete
-    const [aboutUsResponse, newsResponse, contactUsResponse] =
-      await Promise.all([aboutUsPromise, newsPromise, contactUsPromise]);
+    const [aboutUsResponse, newsResponse, contactUsResponse, galleryResponse] =
+      await Promise.all([aboutUsPromise, newsPromise, contactUsPromise, galleryPromise]);
 
     // Extract data from the API responses
     const aboutUsData = aboutUsResponse;
     const newsData = newsResponse;
     const contactUsData = contactUsResponse;
+    const galleryData = galleryResponse;
 
     // Log the fetched data
     console.log("About Us Data:", aboutUsData);
@@ -42,6 +41,8 @@ router.get("/", async (req, res, next) => {
     // Render the EJS template with the fetched data
     res.render("NewsDetails", {
       title: "Express",
+      galleryData,
+      selectedNews,
       aboutUsData,
       newsData,
       contactUsData, // Pass the contact data to the template

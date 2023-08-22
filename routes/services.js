@@ -3,6 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 const OurService = require("../models/OurService");
 const ContactUs = require("../models/ContactUs");
+const Gallery = require("../models/Gallery");
 
 router.get("/", async (req, res, next) => {
   try {
@@ -11,19 +12,15 @@ router.get("/", async (req, res, next) => {
 
     const contactUsPromise = await ContactUs.find()
 
-    // Fetch data from the "our-service" API
-    // const serviceResponse = await axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/our-service"
-    // );
-    // const contactUsPromise = axios.get(
-    //   "https://securtity-website.azurewebsites.net/api/v1/contact-us"
-    // );
+    const galleryPromise = await Gallery.find()
+
     // Wait for all API requests to complete
-    const [contactUsResponse] = await Promise.all([contactUsPromise]);
+    const [contactUsResponse, galleryResponse] = await Promise.all([contactUsPromise, galleryPromise]);
 
     // Extract data from the API response
     const serviceData = serviceResponse;
     const contactUsData = contactUsResponse;
+    const galleryData = galleryResponse;
     // Log the fetched data
     console.log("Fetched Service Data:", serviceData);
     console.log("Contact Us Data:", contactUsData);
@@ -32,6 +29,7 @@ router.get("/", async (req, res, next) => {
       title: "Our Services",
       serviceData,
       contactUsData,
+      galleryData,
     });
   } catch (error) {
     console.error("Error fetching data:", error);
