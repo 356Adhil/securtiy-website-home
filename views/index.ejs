@@ -12,6 +12,10 @@
   <link rel="stylesheet" type="text/css" href="plugins/revolution/css/customStyles.css">
   <!-- REVOLUTION NAVIGATION STYLES -->
 
+  <!-- WhatsApp STYLES -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
   <link href="css/style.css" rel="stylesheet">
   <link href="css/responsive.css" rel="stylesheet">
 
@@ -83,43 +87,31 @@
             <!--Nav Box-->
             <nav class="nav main-menu">
               <ul class="navigation">
-                <li class="current dropdown"><a href="/">Home</a>
 
-                </li>
-                <li class="dropdown"><a href="#">Pages</a>
+                <li><a href="/">Home</a></li>
+
+                <li class="dropdown"><a href="#">About Us</a>
                   <ul>
                     <li><a href="/about">About</a></li>
-                    <li class="dropdown"><a href="#">Projects</a>
+                    <!-- <li class="dropdown"><a href="#">Projects</a>
                       <ul>
                         <li><a href="/projects">Projects List</a></li>
                         <li><a href="/project-details">Project Details</a></li>
                       </ul>
-                    </li>
-                    <li class="dropdown"><a href="#">Team</a>
-                      <ul>
-                        <li><a href="/team">Team List</a></li>
-                        <!-- <li><a href="/team-details">Team Details</a></li> -->
-                      </ul>
-                    </li>
+                    </li> -->
+                    <li><a href="/team">Team</a></li>
+
                     <li><a href="/testimonial">Testimonial</a></li>
 
                     <li><a href="/faq">FAQ</a></li>
-                    <li><a href="page-404.html">Page 404</a></li>
                   </ul>
                 </li>
-                <li class="dropdown"><a href="#">Services</a>
-                  <ul>
-                    <li><a href="/services">Services List</a></li>
-                    <!-- <li><a href="/services-details">Service Details</a></li> -->
-                  </ul>
-                </li>
+               
+                <li><a href="/services">Services</a></li>
 
-                <li class="dropdown"><a href="#">News</a>
-                  <ul>
-                    <li><a href="/newsGrid">News Grid</a></li>
-                    <!-- <li><a href="News-details">News Details</a></li> -->
-                  </ul>
-                </li>
+                <li><a href="/newsGrid">News</a></li>
+
+               
                 <li><a href="/contact">Contact</a></li>
               </ul>
             </nav>
@@ -234,8 +226,8 @@
             <li data-index="rs-1" data-transition="zoomout">
               <!-- MAIN IMAGE -->
 
-              <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${bannerData[0].image}` %>"
-                alt="img" class=" rev-slidebg" />
+              <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${bannerData[0].image}` %>" alt="img"
+                class=" rev-slidebg" />
 
               <div class="tp-caption tp-resizeme rs-parallaxlevel-3 hidden-mobile" data-paddingbottom="[0,0,0,0]"
                 data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]"
@@ -269,26 +261,13 @@
               </div>
 
               <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-type="text"
-                data-height="none" data-width="['750','750','750','450']" data-whitespace="normal"
-                data-hoffset="['0','0','0','0']" data-voffset="['90','90','90','65']"
-                data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
-                data-textalign="['top','top','top','top']"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <div class="text">There are many of passages of lorem Ipsum, but the majori have<br> suffered
-                  alteration
-                  in some form.</div>
-              </div>
-
-
-              <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
                 data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
                 data-type="text" data-height="none" data-width="['700','750','700','450']" data-whitespace="normal"
                 data-hoffset="['0','0','0','0']" data-voffset="['185','185','200','185']"
                 data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
                 data-textalign="['top','top','top','top']"
                 data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <a href="page-about.html" class="theme-btn btn-style-one"><span class="btn-title">Discover
+                <a href="/about" class="theme-btn btn-style-one"><span class="btn-title">Discover
                     more</span></a>
               </div>
             </li>
@@ -297,8 +276,8 @@
             <li data-index="rs-2" data-transition="zoomin">
 
               <!-- <img src="images/main-slider/1.jpg" alt="img" class="rev-slidebg"> -->
-              <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${bannerData[1].image}` %>"
-                alt="img" class="rev-slidebg">
+              <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${bannerData[1].image}` %>" alt="img"
+                class="rev-slidebg">
 
               <div class="tp-caption tp-resizeme rs-parallaxlevel-3 hidden-mobile" data-paddingbottom="[0,0,0,0]"
                 data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]"
@@ -332,26 +311,13 @@
               </div>
 
               <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
-                data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-type="text"
-                data-height="none" data-width="['750','750','750','450']" data-whitespace="normal"
-                data-hoffset="['0','0','0','0']" data-voffset="['90','90','90','65']"
-                data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
-                data-textalign="['top','top','top','top']"
-                data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <div class="text">There are many of passages of lorem Ipsum, but the majori have<br> suffered
-                  alteration
-                  in some form.</div>
-              </div>
-
-
-              <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
                 data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
                 data-type="text" data-height="none" data-width="['700','750','700','450']" data-whitespace="normal"
                 data-hoffset="['0','0','0','0']" data-voffset="['185','185','200','185']"
                 data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
                 data-textalign="['top','top','top','top']"
                 data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <a href="page-about.html" class="theme-btn btn-style-one"><span class="btn-title">Discover
+                <a href="/about" class="theme-btn btn-style-one"><span class="btn-title">Discover
                     more</span></a>
               </div>
             </li>
@@ -375,13 +341,14 @@
               <% ourSpecialityData.forEach(item=> { %>
                 <div class="feature-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
                   <div class="inner-box">
-                    <div class="title-box">
-                      
-                      <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${ item.image }` %>"
+                    <div class="title-box " style="padding-right: 15px;">
+
+                      <img style="height: 70px; padding-bottom: 5px;"
+                        src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${ item.image }` %>"
                         alt="<%= item.title %>" /> <!-- Display the image -->
-                      <h5 class="title"><a href="/about">
-                        <%= item.title %>
-                      </a></h5>
+                      <h5 class="title" style="padding: 10px;"><a href="/about">
+                          <%= item.title %>
+                        </a></h5>
                     </div>
                     <div class="text">
                       <%= item.description %>
@@ -412,28 +379,8 @@
                 </div>
               </div>
 
-              <!--<div class="content-box">
-							<div class="info-box">
-								<h5 class="title">High Quality IT Solutions for Startup</h5>
-								<a href="#" class="read-more">More <i class="fa fa-long-arrow-alt-right"></i></a>
-							</div>
-
-							<div class="about-block">
-								<i class="icon flaticon-business-018-startup"></i>
-								<h5 class="title">Manage Tech Services </h5>
-								<div class="text">We’ve designed a culture that allows our stewards to assimilate</div>
-							</div>
-
-							<div class="about-block">
-								<i class="icon flaticon-business-027-world"></i>
-								<h5 class="title">Internal Networking</h5>
-								<div class="text">We’ve designed a culture that allows our stewards to assimilate.</div>
-							</div>
-
-						</div>-->
-
               <div class="btm-box">
-                <a href="page-about.html" class="theme-btn btn-style-one"><span class="btn-title">Discover
+                <a href="/about" class="theme-btn btn-style-one"><span class="btn-title">Discover
                     more</span></a>
               </div>
             </div>
@@ -481,7 +428,8 @@
                 <div class="text">
                   <%= ourServiceData[0].description.substring(0, 70) %>...
                 </div>
-                <a href="/service-details/<%= ourServiceData[0]._id %>" class="read-more">read More <i class="fa fa-long-arrow-alt-right"></i></a>
+                <a href="/service-details/<%= ourServiceData[0]._id %>" class="read-more">read More <i
+                    class="fa fa-long-arrow-alt-right"></i></a>
               </div>
             </div>
           </div>
@@ -502,7 +450,8 @@
                 <div class="text">
                   <%= ourServiceData[1].description.substring(0, 70) %>...
                 </div>
-                <a href="/service-details/<%= ourServiceData[1]._id %>" class="read-more">read More <i class="fa fa-long-arrow-alt-right"></i></a>
+                <a href="/service-details/<%= ourServiceData[1]._id %>" class="read-more">read More <i
+                    class="fa fa-long-arrow-alt-right"></i></a>
               </div>
             </div>
           </div>
@@ -523,7 +472,8 @@
                 <div class="text">
                   <%= ourServiceData[2].description.substring(0, 70) %>...
                 </div>
-                <a href="/service-details/<%= ourServiceData[2]._id %>">Read More <i class="fa fa-long-arrow-alt-right"></i></a>
+                <a href="/service-details/<%= ourServiceData[2]._id %>">Read More <i
+                    class="fa fa-long-arrow-alt-right"></i></a>
               </div>
             </div>
           </div>
@@ -541,9 +491,9 @@
             <div class="inner-column">
               <div class="sec-title light">
                 <span class="sub-title">Our Vision</span>
-                <h2>
+                <h5 class="vision_p">
                   <%= aboutUsData[0].vision %>
-                </h2>
+                </h5>
                 <div class="text">Our Mission</div>
               </div>
               <div class="info-box">
@@ -552,11 +502,11 @@
                   <%= aboutUsData[0].mission %><br>
                 </h5>
               </div>
-              <ul class="list-style-two">
+              <!-- <ul class="list-style-two">
                 <li><i class="fa fa-check-circle"></i> Lorem Ipsum is not simply random text</li>
                 <li><i class="fa fa-check-circle"></i> Making this the first true generator on the Internet</li>
                 <li><i class="fa fa-check-circle"></i> Various versions have evolved over the years</li>
-              </ul>
+              </ul> -->
             </div>
           </div>
 
@@ -565,8 +515,7 @@
             <div class="inner-column">
               <div class="image-box">
                 <figure class="image" style="display: flex; justify-content: center; align-items: center;">
-                  <img
-                    src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${aboutUsData[0].image}` %>"
+                  <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${aboutUsData[0].image}` %>"
                     alt="Image Description" style="width: 400px; height: 200px;">
                 </figure>
 
@@ -588,97 +537,6 @@
       </div>
     </section>
     <!-- End Offer Section -->
-
-    <!-- Call To Action Two -->
-    <!--<section class="call-to-action" style="background-image: url(images/background/1.jpg)">
-		<div class="auto-container">
-			<div class="title-box">
-				<div class="icon bounce-y"><img src="images/resource/icon-logo.png" alt=""></div>
-				<h1 class="title">IT Solutions & Services <br>at your Fingertips</h1>
-				<a href="page-services.html" class="theme-btn btn-style-one"><span class="btn-title">Discover more</span></a>
-			</div>
-		</div>
-	</section>-->
-    <!--End Call To Action Two -->
-
-    <!-- Project Section -->
-    <!--<section class="project-section pb-0">
-		<div class="auto-container">
-			<div class="sec-title">
-				<div class="row">
-					<div class="col-lg-7">
-						<span class="sub-title">recently Completed work</span>
-						<h2>Improve & Enhance the <br>Tech Projects</h2>
-					</div>
-					<div class="col-lg-5">
-						<div class="text">There are many variations of passages of available but majority have suffered alteration in some form, by humou or randomised words which don't look even slightly believable.</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="carousel-outer">
-				
-				<div class="project-carousel owl-carousel owl-theme">
-					
-					<div class="project-block">
-						<div class="inner-box">
-							<div class="image-box">
-								<figure class="image"><a href="images/resource/project-1.jpg" class="lightbox-image"><img src="images/resource/project-1.jpg" alt=""></a></figure>
-								<a href="page-project-details.html" class="icon"><i class="fa fa-long-arrow-alt-right"></i></a>
-							</div>
-							<div class="content-box">
-								<h4 class="title"><a href="page-project-details.html">Tech Solutions</a></h4>
-								<span class="cat">DESIGN / IDEAS</span>
-							</div>
-						</div>
-					</div>
-
-					
-					<div class="project-block">
-						<div class="inner-box">
-							<div class="image-box">
-								<figure class="image"><a href="images/resource/project-2.jpg" class="lightbox-image"><img src="images/resource/project-2.jpg" alt=""></a></figure>
-								<a href="page-project-details.html" class="icon"><i class="fa fa-long-arrow-alt-right"></i></a>
-							</div>
-							<div class="content-box">
-								<h4 class="title"><a href="page-project-details.html">Smart Visions</a></h4>
-								<span class="cat">DESIGN / IDEAS</span>
-							</div>
-						</div>
-					</div>
-
-					
-					<div class="project-block">
-						<div class="inner-box">
-							<div class="image-box">
-								<figure class="image"><a href="images/resource/project-3.jpg" class="lightbox-image"><img src="images/resource/project-3.jpg" alt=""></a></figure>
-								<a href="page-project-details.html" class="icon"><i class="fa fa-long-arrow-alt-right"></i></a>
-							</div>
-							<div class="content-box">
-								<h4 class="title"><a href="page-project-details.html">Platform Integration</a></h4>
-								<span class="cat">DESIGN / IDEAS</span>
-							</div>
-						</div>
-					</div>
-
-					
-					<div class="project-block">
-						<div class="inner-box">
-							<div class="image-box">
-								<figure class="image"><a href="images/resource/project-4.jpg" class="lightbox-image"><img src="images/resource/project-4.jpg" alt=""></a></figure>
-								<a href="page-project-details.html" class="icon"><i class="fa fa-long-arrow-alt-right"></i></a>
-							</div>
-							<div class="content-box">
-								<h4 class="title"><a href="page-project-details.html">Web Development</a></h4>
-								<span class="cat">DESIGN / IDEAS</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>-->
-    <!--End Project Section -->
 
     <!-- Fun Fact Section -->
     <section class="fun-fact-section">
@@ -777,53 +635,6 @@
                 <% } %>
 
 
-                  <!-- Testimonial Block Two -->
-                  <!-- <div class="testimonial-block swiper-slide">
-                <div class="row">
-                  <div class="content-column col-lg-6 col-md-12">
-                    <div class="icon-box">
-                      <span class="icon icon-quote"></span>
-                      <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                          class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                    </div>
-                    <div class="text">competitive pricing and customer support. It’s refresing to get such a personal
-                      touch. Duis aute lorem ipsum is simply free text available in the market reprehen. This is due to
-                      their excellent service,</div>
-                    <div class="info-box">
-                      <h4 class="name">Jessica Brown</h4>
-                      <span class="designation">Senior Designer</span>
-                    </div>
-                  </div>
-                  <div class="image-column col-lg-6 col-md-12">
-                    <figure class="image"><img src="images/resource/testimonial-1.png" alt=""></figure>
-                  </div>
-                </div>
-              </div> -->
-
-                  <!-- Testimonial Block Two -->
-                  <!-- <div class="testimonial-block swiper-slide">
-                <div class="row">
-                  <div class="content-column col-lg-6 col-md-12">
-                    <div class="icon-box">
-                      <span class="icon icon-quote"></span>
-                      <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                          class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                    </div>
-                    <div class="text">Simply free text available in the market reprehen. This is due to their excellent
-                      service, competitive pricing and customer support. It’s refresing to get such a personal touch.
-                      Duis aute lorem ipsum is </div>
-                    <div class="info-box">
-                      <h4 class="name">michale smith</h4>
-                      <span class="designation">Senior Designer</span>
-                    </div>
-                  </div>
-                  <div class="image-column col-lg-6 col-md-12">
-                    <figure class="image"><img src="images/resource/testimonial-1.png" alt=""></figure>
-                  </div>
-                </div>
-              </div> -->
-
-
                   <!-- Add Pagination -->
                   <div class="testimonial-pagination"></div>
             </div>
@@ -833,13 +644,19 @@
           <div class="swiper-container testimonial-thumbs">
             <div class="swiper-wrapper">
               <div class="swiper-slide testimonial-thumb">
-                <figure class="image"><img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${testimonialData[0].image}` %>" alt=""></figure>
+                <figure class="image"><img
+                    src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${testimonialData[0].image}` %>"
+                    alt=""></figure>
               </div>
               <div class="swiper-slide testimonial-thumb">
-                <figure class="image"><img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${testimonialData[0].image}` %>" alt=""></figure>
+                <figure class="image"><img
+                    src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${testimonialData[0].image}` %>"
+                    alt=""></figure>
               </div>
               <div class="swiper-slide testimonial-thumb">
-                <figure class="image"><img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${testimonialData[0].image}` %>" alt=""></figure>
+                <figure class="image"><img
+                    src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${testimonialData[0].image}` %>"
+                    alt=""></figure>
               </div>
             </div>
           </div>
@@ -848,271 +665,17 @@
     </section>
     <!-- End Testimonial Section -->
 
-    <!-- Team Section -->
-    <!--<section class="team-section pt-0 pb-0">
-		<div class="anim-icons">
-			<span class="icon icon-lines bounce-x"></span>
-			<span class="icon icon-dots bounce-y"></span>
-		</div>
-		<div class="auto-container">
-			<div class="sec-title text-center">
-				<span class="sub-title">Our feedbakcs</span>
-				<h2>EXPERTS READY TO SURVE</h2>
-			</div>
-
-			<div class="row">
-				
-				<div class="team-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-					<div class="inner-box">
-						<div class="image-box">
-							<figure class="image"><a href="page-team-details.html"><img src="images/resource/team-1.jpg" alt=""></a></figure>
-						</div>
-						<div class="info-box">
-							<h5 class="name"><a href="page-team-details.html">Kevin Hardson</a></h5>
-							<span class="designation">designer</span>
-							<div class="social-links">
-								<a href="#"><i class="fab fa-facebook-f"></i></a>
-								<a href="#"><i class="fab fa-twitter"></i></a>
-								<a href="#"><i class="fab fa-pinterest-p"></i></a>
-								<a href="#"><i class="fab fa-instagram"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				
-				<div class="team-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
-					<div class="inner-box">
-						<div class="image-box">
-							<figure class="image"><a href="page-team-details.html"><img src="images/resource/team-2.jpg" alt=""></a></figure>
-						</div>
-						<div class="info-box">
-							<h5 class="name"><a href="page-team-details.html">Jessica Brown</a></h5>
-							<span class="designation">developer</span>
-							<div class="social-links">
-								<a href="#"><i class="fab fa-facebook-f"></i></a>
-								<a href="#"><i class="fab fa-twitter"></i></a>
-								<a href="#"><i class="fab fa-pinterest-p"></i></a>
-								<a href="#"><i class="fab fa-instagram"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				
-				<div class="team-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="600ms">
-					<div class="inner-box">
-						<div class="image-box">
-							<figure class="image"><a href="page-team-details.html"><img src="images/resource/team-3.jpg" alt=""></a></figure>
-						</div>
-						<div class="info-box">
-							<h5 class="name"><a href="page-team-details.html">michale smith</a></h5>
-							<span class="designation">co founder</span>
-							<div class="social-links">
-								<a href="#"><i class="fab fa-facebook-f"></i></a>
-								<a href="#"><i class="fab fa-twitter"></i></a>
-								<a href="#"><i class="fab fa-pinterest-p"></i></a>
-								<a href="#"><i class="fab fa-instagram"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>-->
-    <!-- End Team Section -->
-
-    <!-- Clients Section   -->
-    <!--<section class="clients-section">
-		<div class="auto-container">
-			
-			<div class="sponsors-outer">
-				
-				<ul class="clients-carousel owl-carousel owl-theme">
-					<li class="slide-item"> <a href="#"><img src="images/resource/client.png" alt=""></a> </li>
-					<li class="slide-item"> <a href="#"><img src="images/resource/client.png" alt=""></a> </li>
-					<li class="slide-item"> <a href="#"><img src="images/resource/client.png" alt=""></a> </li>
-					<li class="slide-item"> <a href="#"><img src="images/resource/client.png" alt=""></a> </li>
-					<li class="slide-item"> <a href="#"><img src="images/resource/client.png" alt=""></a> </li>
-				</ul>
-			</div>
-		</div>
-	</section>-->
-    <!--End Clients Section -->
-
-    <!-- FAQ Section -->
-    <!--<section class="faqs-section">
-
-		<div class="auto-container">
-			<div class="row">
-				
-				<div class="faq-column col-lg-6 col-md-12 col-sm-12 order-4">
-					<div class="faq-bg" style="background-image: url(images/icons/pattern-2.jpg)"></div>
-					<div class="inner-column">
-						<div class="sec-title">
-							<span class="sub-title">Questions & answers</span>
-							<h2>See Frequently Asked Questions</h2>
-						</div>
-
-						<ul class="accordion-box wow fadeInRight">
-							
-							<li class="accordion block">
-								<div class="acc-btn">Is my technology allowed on tech?
-									<div class="icon fa fa-plus"></div>
-								</div>
-								<div class="acc-content">
-									<div class="content">
-										<div class="text">There are many variations of passages the majority have suffered alteration in some fo
-											injected humour, or randomised words believable.</div>
-									</div>
-								</div>
-							</li>
-							
-							<li class="accordion block active-block">
-								<div class="acc-btn active">How to soft launch your business?
-									<div class="icon fa fa-plus"></div>
-								</div>
-								<div class="acc-content current">
-									<div class="content">
-										<div class="text">There are many variations of passages the majority have suffered alteration in some fo injected humour, or randomised words believable.</div>
-									</div>
-								</div>
-							</li>
-							
-							<li class="accordion block">
-								<div class="acc-btn">How to turn visitors into contributors
-									<div class="icon fa fa-plus"></div>
-								</div>
-								<div class="acc-content">
-									<div class="content">
-										<div class="text">There are many variations of passages the majority have suffered alteration in some fo injected humour, or randomised words believable.</div>
-									</div>
-								</div>
-							</li>
-							
-							<li class="accordion block">
-								<div class="acc-btn">How can i find my solutions?
-									<div class="icon fa fa-plus"></div>
-								</div>
-								<div class="acc-content">
-									<div class="content">
-										<div class="text">There are many variations of passages the majority have suffered alteration in some fo injected humour, or randomised words believable.</div>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				
-				<div class="form-column col-lg-6 col-md-12 col-sm-12">
-					<div class="form-bg" style="background-image: url(images/background/3.jpg)"></div>
-					<div class="inner-column">
-						
-						<div class="contact-form wow fadeInLeft">
-							<div class="title-box">
-								<span class="sub-title">Contact us</span>
-								<h3>Write Email</h3>
-							</div>
-
-							
-							<form method="post" action="https://kodesolution.com/html/2022/oitech-html/get" id="contact-form">
-								<div class="form-group">
-									<input type="text" name="full_name" placeholder="Your Name" required>
-								</div>
-
-								<div class="form-group">
-									<input type="text" name="Email" placeholder="Email Address" required>
-								</div>
-
-								<div class="form-group">
-									<input type="text" name="Phone" placeholder="Phone Number" required>
-								</div>
-
-								<div class="form-group">
-									<textarea name="message" placeholder="Write a Message" required></textarea>
-								</div>
-
-								<div class="form-group">
-									<button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="btn-title">Send a message</span></button>
-								</div>
-							</form>
-						</div>
-						
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>-->
-    <!--End FAQ Section -->
-
-    <!-- News Section -->
-
-    <!--End News Section -->
-
-    <!-- Call To Action Two -->
-
-    <!--End Call To Action Two -->
-
-    <!-- Map Section-->
-    <!--<section class="map-section">
-		<iframe
-			class="map"
-			src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-		</iframe>
-
-		<div class="branches-outer">
-			<div class="auto-container">
-				<div class="row">
-					
-					<div class="branch-block col-lg-4 col-md-12 col-sm-12">
-						<div class="inner-box">
-							<h5 class="title">New York</h5>
-							<ul class="info-list">
-								<li><i class="fa fa-phone"></i> <a href="tel:666888000">666 888 000</a><br></li>
-								<li><i class="fa fa-envelope"></i> <a href="mailto:needhelp@company.com">needhelp@company.com</a><br></li>
-								<li><i class="fa fa-map-marker-alt"></i> 35 Deerfield Valdosta Road, United Kingdom</li>
-							</ul>
-						</div>
-					</div>
-
-					
-					<div class="branch-block col-lg-4 col-md-12 col-sm-12">
-						<div class="inner-box">
-							<h5 class="title">Washington DC</h5>
-							<ul class="info-list">
-								<li><i class="fa fa-phone"></i> <a href="tel:666888000">666 888 000</a><br></li>
-								<li><i class="fa fa-envelope"></i> <a href="mailto:needhelp@company.com">needhelp@company.com</a><br></li>
-								<li><i class="fa fa-map-marker-alt"></i> 35 Deerfield Valdosta Road, United Kingdom</li>
-							</ul>
-						</div>
-					</div>
-
-					
-					<div class="branch-block col-lg-4 col-md-12 col-sm-12">
-						<div class="inner-box">
-							<h5 class="title">Las Vegas</h5>
-							<ul class="info-list">
-								<li><i class="fa fa-phone"></i> <a href="tel:666888000">666 888 000</a><br></li>
-								<li><i class="fa fa-envelope"></i> <a href="mailto:needhelp@company.com">needhelp@company.com</a><br></li>
-								<li><i class="fa fa-map-marker-alt"></i> 35 Deerfield Valdosta Road, United Kingdom</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>-->
-    <!--End Map Section-->
-
-                <!-- Footer -->
-                <%- include('Footer.ejs') %>
-                <!-- Footer -->
+    <!-- Footer -->
+    <%- include('Footer.ejs') %>
+      <!-- Footer -->
 
   </div><!-- End Page Wrapper -->
 
+
+
+
   <!-- Scroll To Top -->
+
   <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
   <script src="js/jquery.js"></script>
@@ -1140,6 +703,23 @@
   <script src="js/swiper.min.js"></script>
   <script src="js/owl.js"></script>
   <script src="js/script.js"></script>
+
+
+
+
+  <script src="_include/js/feedback.js"></script>
+
+
+  <script>
+    function toggle_visibility() {
+      var e = document.getElementById('feedback-main');
+      if (e.style.display == 'block')
+        e.style.display = 'none';
+      else
+        e.style.display = 'block';
+    }
+
+  </script>
 </body>
 
 </html>

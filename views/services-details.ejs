@@ -61,40 +61,28 @@
                                     data-wow-duration="1200m">
                                     <div class="service-list">
                                         <ul>
-                                            <% for (const service of serviceData) { %>
-                                                <li><a href="page-service-details.html" class="current"><i
-                                                            class="fas fa-angle-right"></i><span>
-                                                            <%= service.title %>
-                                                        </span></a></li>
-
+                                            <ul class="service-list">
+                                                <% for (let i = 0; i < Math.min(serviceData.length, 10); i++) { %>
+                                                    <li>
+                                                        <a href="/service-details/<%= serviceData[i]._id %>" class="current">
+                                                            <i class="fas fa-angle-right"></i>
+                                                            <span><%= serviceData[i].title %></span>
+                                                        </a>
+                                                    </li>
                                                 <% } %>
+                                            </ul>                                            
                                         </ul>
                                     </div>
                                 </div>
                             </div>
 
-                            <!--End Services Details Sidebar Single-->
-                            <div class="sidebar-widget banner-widget">
-                                <div class="widget-content" style="background-image: url(../images/resource/contact.jpg);">
-                                    <div class="shape"
-                                        style="background-image: url(../images/resource/overlay-shape.png);"></div>
-                                    <div class="content-box">
-                                        <div class="icon-box">
-                                            <i class="lnr lnr-icon-pie-chart"></i>
-                                        </div>
-                                        <h3>Be healthy & eat only fresh</h3>
-                                        <a href="page-contact.html" class="theme-btn btn-style-two bg-light"><span
-                                                class="btn-title text-black"> Contact us</span></a>
-                                    </div>
-                                </div>
-                            </div>
 
                             <!--Start Services Details Sidebar Single-->
                             <div class="sidebar-widget service-sidebar-single mt-5">
                                 <div class="service-sidebar-single-btn wow fadeInUp" data-wow-delay="0.5s"
                                     data-wow-duration="1200m">
                                     <a href="#" class="theme-btn btn-style-one d-grid"><span class="btn-title"><span
-                                                class="fas fa-file-pdf"></span> download pdf file</span></a>
+                                                class="fas fa-file-pdf"></span> download</span></a>
                                 </div>
                             </div>
                             <!--End Services Details Sidebar Single-->
@@ -113,9 +101,9 @@
 
                             <div class=" mt-25">
                                 <h3>Frequently Asked Question</h3>
-                                <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui
+                                <!-- <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui
                                     dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta
-                                    sunt explicabo.</p>
+                                    sunt explicabo.</p> -->
                                 <ul class="accordion-box wow fadeInRight">
                                     <!--Block-->
                                     <% for (const faq of faqData) { %>
