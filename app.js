@@ -4,7 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const bodyParser = require("body-parser");
-
+const cors = require("cors");
 const connectDB = require("./config/db");
 
 // Load env vars
@@ -32,6 +32,27 @@ var app = express();
 // Connect to MongoDB database
 connectDB();
 
+// Configure CORS
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://icy-forest-021334710.3.azurestaticapps.net",
+  "https://event-manager.syd1.cdn.digitaloceanspaces.com",
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        const msg =
+          "The CORS policy for this site does not allow access from the specified Origin.";
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    },
+  })
+);
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -42,6 +63,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
