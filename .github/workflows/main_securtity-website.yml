@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'Securtity-website'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_801D3CBDD902492A89F443A10845F51E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_ECB32C8091E944A09A92EC8C28FA5A0B }}
           package: .
