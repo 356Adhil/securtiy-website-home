@@ -21,14 +21,14 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/datahex-in/security-website.git"
+    "url": "git+https://github.com/teksedo/securtiy-website-home"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/datahex-in/security-website/issues"
+    "url": "https://github.com/teksedo/securtiy-website-home/issues"
   },
-  "homepage": "https://github.com/datahex-in/security-website#readme",
+  "homepage": "https://github.com/teksedo/securtiy-website-homee#readme",
   "description": "",
   "devDependencies": {
     "nodemon": "^3.0.1"
