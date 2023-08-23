@@ -1,41 +1,23 @@
-const express = require("express");
-const router = express.Router();
-const axios = require("axios");
-const faq = require("../models/faq");
-const ContactUs = require("../models/ContactUs");
-const Gallery = require("../models/Gallery");
+const router = require("express").Router();
+// Controllers
+const {
+  createFaq,
+  getFaq,
+  updateFaq,
+  deleteFaq,
+  getByFranchise,
+} = require("../controllers/faq");
+// Middleware
+const { protect, authorize } = require("../middleware/auth");
+const { reqFilter } = require("../middleware/filter");
 
-router.get("/", async (req, res, next) => {
-  try {
+router
+  .route("/")
+  .post(createFaq)
+  .get(reqFilter, getFaq)
+  .put(updateFaq)
+  .delete(deleteFaq);
 
-    const faqResponse = await faq.find()
-
-    const contactUsPromise = await ContactUs.find()
-
-    const galleryPromise = await Gallery.find()
-    
-    const [contactUsResponse, galleryResponse] = await Promise.all([contactUsPromise, galleryPromise]);
-    // Extract data from the API response
-    const faqData = faqResponse;
-    const contactUsData = contactUsResponse;
-    const galleryData = galleryResponse;
-
-    // Log the fetched data
-    console.log("gallery Data:", galleryData);
-    console.log("Fetched FAQ Data:", faqData);
-    console.log("Contact Us Data:", contactUsData);
-    // Render the EJS template with the fetched data
-    res.render("faq", {
-      title: "Frequently Asked Questions",
-      faqData,
-      contactUsData,
-      galleryData,
-    });
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    // Render an error page or handle the error gracefully
-    res.render("error", { title: "Error" });
-  }
-});
+router.get("/get-by-faq", getByFranchise);
 
 module.exports = router;
