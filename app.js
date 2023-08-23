@@ -12,15 +12,12 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config/.env" });
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
 var NewsRouter = require("./routes/NewsDetails");
 var gridRouter = require("./routes/newsgrid");
 var AboutRouter = require("./routes/About");
 var ContactRouter = require("./routes/Contact");
 
 var faqRouter = require("./routes/faq");
-var projects_detailsRouter = require("./routes/projects-details");
-var projectsRouter = require("./routes/projects");
 var services_detailsRouter = require("./routes/services-details");
 var servicesRouter = require("./routes/services");
 var team_detailsRouter = require("./routes/team-details");
@@ -66,15 +63,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
 app.use("/News-Details", NewsRouter);
 app.use("/newsgrid", gridRouter);
 app.use("/About", AboutRouter);
 app.use("/Contact", ContactRouter);
 app.use("/faq", faqRouter);
 
-app.use("/project-details", projects_detailsRouter);
-app.use("/projects", projectsRouter);
 app.use("/service-details", services_detailsRouter);
 app.use("/services", servicesRouter);
 app.use("/team-details", team_detailsRouter);
