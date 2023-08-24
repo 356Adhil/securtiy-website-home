@@ -4,154 +4,151 @@
 <!-- Mirrored from kodesolution.com/html/2022/oitech-html/page-service-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:02 GMT -->
 
 <head>
-    <meta charset="utf-8">
-    <title>Oitech | IT Solutions & Technology HTML Template | Home Page 01</title>
-    <!-- Stylesheets -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Oitech | IT Solutions & Technology HTML Template | Home Page 01</title>
+  <!-- Stylesheets -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/responsive.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/responsive.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 
-    <!-- Responsive -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
-    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
 <body>
 
-    <div class="page-wrapper">
+  <div class="page-wrapper">
 
-        <!-- Preloader -->
-        <div class="preloader"></div>
+    <!-- Preloader -->
+    <div class="preloader"></div>
 
-               <!-- Header -->
-               <%- include('Header.ejs') %>
-               <!-- Header -->
+    <!-- Header -->
+    <%- include('Header.ejs') %>
+    <!-- Header -->
 
-        <!-- Start main-content -->
-        <section class="page-title" style="background-image: url(../images/background/page-title.jpg);">
-            <div class="auto-container">
-                <div class="title-outer">
-                    <h1 class="title">Service Details</h1>
-                    <ul class="page-breadcrumb">
-                        <li><a href="index-2.html">Home</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li>Services</li>
+    <!-- Start main-content -->
+    <section class="page-title" style="background-image: url(../images/background/page-title.jpg);">
+      <div class="auto-container">
+        <div class="title-outer">
+          <h1 class="title">Service Details</h1>
+          <ul class="page-breadcrumb">
+            <li><a href="index-2.html">Home</a></li>
+            <li><a href="#">Pages</a></li>
+            <li>Services</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- end main-content -->
+
+    <!--Start Services Details-->
+    <section class="services-details">
+      <div class="container">
+        <div class="row">
+          <!--Start Services Details Sidebar-->
+          <div class="col-xl-4 col-lg-4">
+            <div class="service-sidebar">
+              <!--Start Services Details Sidebar Single-->
+              <div class="sidebar-widget service-sidebar-single">
+                <div class="service-sidebar wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="1200m">
+                  <div class="service-list">
+                    <ul>
+                      <ul class="service-list">
+                        <% for (let i = 0; i < Math.min(serviceData.length, 10); i++) { %>
+                        <li>
+                          <a href="/service-details/<%= serviceData[i]._id %>" class="current">
+                            <i class="fas fa-angle-right"></i>
+                            <span><%= serviceData[i].title %></span>
+                          </a>
+                        </li>
+                        <% } %>
+                      </ul>
                     </ul>
+                  </div>
                 </div>
+              </div>
+
+
+              <!--Start Services Details Sidebar Single-->
+              <div class="sidebar-widget service-sidebar-single mt-5">
+                <div class="service-sidebar-single-btn wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1200m">
+                  <a href="#" class="theme-btn btn-style-one d-grid"><span class="btn-title"><span class="fas fa-file-pdf"></span> download</span></a>
+                </div>
+              </div>
+              <!--End Services Details Sidebar Single-->
             </div>
-        </section>
-        <!-- end main-content -->
+          </div>
+          <!--End Services Details Sidebar-->
 
-        <!--Start Services Details-->
-        <section class="services-details">
-            <div class="container">
-                <div class="row">
-                    <!--Start Services Details Sidebar-->
-                    <div class="col-xl-4 col-lg-4">
-                        <div class="service-sidebar">
-                            <!--Start Services Details Sidebar Single-->
-                            <div class="sidebar-widget service-sidebar-single">
-                                <div class="service-sidebar wow fadeInUp" data-wow-delay="0.1s"
-                                    data-wow-duration="1200m">
-                                    <div class="service-list">
-                                        <ul>
-                                            <ul class="service-list">
-                                                <% for (let i = 0; i < Math.min(serviceData.length, 10); i++) { %>
-                                                    <li>
-                                                        <a href="/service-details/<%= serviceData[i]._id %>" class="current">
-                                                            <i class="fas fa-angle-right"></i>
-                                                            <span><%= serviceData[i].title %></span>
-                                                        </a>
-                                                    </li>
-                                                <% } %>
-                                            </ul>                                            
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+          <!--Start Services Details Content-->
+          <div class="col-xl-8 col-lg-8">
+            <div class="services-details__content">
+              <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${selectedService.image }` %>" alt="" />
+              <h2 class="mt-4"><%= selectedService.title %></h2>
+              <p>
+                <%= selectedService.description %>
+              </p>
 
-
-                            <!--Start Services Details Sidebar Single-->
-                            <div class="sidebar-widget service-sidebar-single mt-5">
-                                <div class="service-sidebar-single-btn wow fadeInUp" data-wow-delay="0.5s"
-                                    data-wow-duration="1200m">
-                                    <a href="#" class="theme-btn btn-style-one d-grid"><span class="btn-title"><span
-                                                class="fas fa-file-pdf"></span> download</span></a>
-                                </div>
-                            </div>
-                            <!--End Services Details Sidebar Single-->
-                        </div>
-                    </div>
-                    <!--End Services Details Sidebar-->
-
-                    <!--Start Services Details Content-->
-                    <div class="col-xl-8 col-lg-8">
-                        <div class="services-details__content">
-                            <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${selectedService.image }` %>" alt="" />
-                            <h2 class="mt-4"><%= selectedService.title %></h2>
-                            <p>
-                                <%= selectedService.description %>
-                            </p>
-
-                            <div class=" mt-25">
-                                <h3>Frequently Asked Question</h3>
-                                <!-- <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui
+              <div class=" mt-25">
+                <h3>Frequently Asked Question</h3>
+                <!-- <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui
                                     dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta
                                     sunt explicabo.</p> -->
-                                <ul class="accordion-box wow fadeInRight">
-                                    <!--Block-->
-                                    <% for (const faq of faqData) { %>
-                                        <li class="accordion block">
-                                            <div class="acc-btn">I <%= faq.question %>
-                                                    <div class="icon fa fa-plus"></div>
-                                            </div>
-                                            <div class="acc-content">
-                                                <div class="content">
-                                                    <div class="text">
-                                                        <%= faq.answer %>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <% } %>
-                                </ul>
-                            </div>
-                        </div>
+                <ul class="accordion-box wow fadeInRight">
+                  <!--Block-->
+                  <% for (const faq of faqData) { %>
+                  <li class="accordion block">
+                    <div class="acc-btn">I <%= faq.question %>
+                      <div class="icon fa fa-plus"></div>
                     </div>
-                    <!--End Services Details Content-->
-                </div>
+                    <div class="acc-content">
+                      <div class="content">
+                        <div class="text">
+                          <%= faq.answer %>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <% } %>
+                </ul>
+              </div>
             </div>
-        </section>
-        <!--End Services Details-->
+          </div>
+          <!--End Services Details Content-->
+        </div>
+      </div>
+    </section>
+    <!--End Services Details-->
 
-                   <!-- Footer -->
-                   <%- include('Footer.ejs') %>
-                   <!-- Footer -->
+    <!-- Footer -->
+    <%- include('Footer.ejs') %>
+    <!-- Footer -->
 
-    </div><!-- End Page Wrapper -->
-
-
-    <!-- Scroll To Top -->
-    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+  </div><!-- End Page Wrapper -->
 
 
-    <script src="../js/jquery.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.fancybox.js"></script>
-    <script src="../js/jquery-ui.js"></script>
-    <script src="../js/wow.js"></script>
-    <script src="../js/appear.js"></script>
-    <script src="../js/select2.min.js"></script>
-    <script src="../js/swiper.min.js"></script>
-    <script src="../js/owl.js"></script>
-    <script src="../js/script.js"></script>
+  <!-- Scroll To Top -->
+  <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+
+  <script src="../js/jquery.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.fancybox.js"></script>
+  <script src="../js/jquery-ui.js"></script>
+  <script src="../js/wow.js"></script>
+  <script src="../js/appear.js"></script>
+  <script src="../js/select2.min.js"></script>
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/owl.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 
 <!-- Mirrored from kodesolution.com/html/2022/oitech-html/page-service-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:03 GMT -->

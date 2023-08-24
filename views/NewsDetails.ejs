@@ -4,164 +4,161 @@
 <!-- Mirrored from kodesolution.com/html/2022/oitech-html//News-Details by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:09 GMT -->
 
 <head>
-    <meta charset="utf-8">
-    <title>Oitech | IT Solutions & Technology HTML Template | Home Page 01</title>
-    <!-- Stylesheets -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Oitech | IT Solutions & Technology HTML Template | Home Page 01</title>
+  <!-- Stylesheets -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/responsive.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/responsive.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 
-    <!-- Responsive -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
-    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
 <body>
 
-    <div class="page-wrapper">
+  <div class="page-wrapper">
 
-        <!-- Preloader -->
-        <div class="preloader"></div>
+    <!-- Preloader -->
+    <div class="preloader"></div>
 
-               <!-- Header -->
-               <%- include('Header.ejs') %>
-               <!-- Header -->
+    <!-- Header -->
+    <%- include('Header.ejs') %>
+    <!-- Header -->
 
-        <!-- Start main-content -->
-        <section class="page-title" style="background-image: url(../images/background/page-title.jpg);">
-            <div class="auto-container">
-                <div class="title-outer">
-                    <h1 class="title">News Details</h1>
-                    <ul class="page-breadcrumb">
-                        <li><a href="/">Home</a></li>
-                        <li>News</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!-- end main-content -->
+    <!-- Start main-content -->
+    <section class="page-title" style="background-image: url(../images/background/page-title.jpg);">
+      <div class="auto-container">
+        <div class="title-outer">
+          <h1 class="title">News Details</h1>
+          <ul class="page-breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li>News</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- end main-content -->
 
-        <!--Blog Details Start-->
-        <section class="blog-details">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-8 col-lg-7">
-                        <div class="blog-details__left">
-                            <div class="blog-details__img">
-                                <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${selectedNews.image }` %>"
-                                    alt="">
-                                <div class="blog-details__date">
-                                    <span class="day">
-                                        <%= new Date(selectedNews.date).toLocaleDateString('en-US', {
+    <!--Blog Details Start-->
+    <section class="blog-details">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-8 col-lg-7">
+            <div class="blog-details__left">
+              <div class="blog-details__img">
+                <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${selectedNews.image }` %>" alt="">
+                <div class="blog-details__date">
+                  <span class="day">
+                    <%= new Date(selectedNews.date).toLocaleDateString('en-US', {
                                             day: 'numeric' }) %>
 
-                                    </span>
-                                    <span class="month">
-                                        <%= new Date(selectedNews.date).toLocaleDateString('en-US', {
+                  </span>
+                  <span class="month">
+                    <%= new Date(selectedNews.date).toLocaleDateString('en-US', {
                                             month: 'long' }) %>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="blog-details__content">
-                                <h3 class="blog-details__title">
-                                    <%= selectedNews.title %>
-                                </h3>
-                                <p class="blog-details__text-2">
-                                    <%= selectedNews.description %>
-                                </p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="sidebar">
-                            <div class="sidebar__single sidebar__post">
-                                <h3 class="sidebar__title">Latest Posts</h3>
-                                <ul class="sidebar__post-list list-unstyled">
-                                    <% for (const newsItem of newsData) { %>
-                                        <li>
-                                            <div class="sidebar__post-image"> <img
-                                                    src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${newsItem.image }` %>"
-                                                    alt="">
-                                            </div>
-                                            <div class="sidebar__post-content">
-                                                <h3> <span class="sidebar__post-content-meta"><i
-                                                            class="fas fa-user-circle"></i>Admin</span> <a
-                                                        href="/News-Details">
-                                                        <%= newsItem.title %>
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                        </li>
-                                        <% } %>
-                                </ul>
-                            </div>
-                            
-                        </div>
-                    </div>
+                  </span>
                 </div>
+              </div>
+              <div class="blog-details__content">
+                <h3 class="blog-details__title">
+                  <%= selectedNews.title %>
+                </h3>
+                <p class="blog-details__text-2">
+                  <%= selectedNews.description %>
+                </p>
+              </div>
+
             </div>
-        </section>
-        <!--Blog Details End-->
+          </div>
+          <div class="col-xl-4 col-lg-5">
+            <div class="sidebar">
+              <div class="sidebar__single sidebar__post">
+                <h3 class="sidebar__title">Latest Posts</h3>
+                <ul class="sidebar__post-list list-unstyled">
+                  <% for (const newsItem of newsData) { %>
+                  <li>
+                    <div class="sidebar__post-image"> <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${newsItem.image }` %>" alt="">
+                    </div>
+                    <div class="sidebar__post-content">
+                      <h3> <span class="sidebar__post-content-meta"><i class="fas fa-user-circle"></i>Admin</span> <a href="/news-details/<%= newsItem._id %>">
+                          <%= newsItem.title %>
+                        </a>
+                      </h3>
+                    </div>
+                  </li>
+                  <% } %>
+                </ul>
+              </div>
 
-                   <!-- Footer -->
-                   <%- include('Footer.ejs') %>
-                   <!-- Footer -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Blog Details End-->
 
-    </div><!-- End Page Wrapper -->
+    <!-- Footer -->
+    <%- include('Footer.ejs') %>
+    <!-- Footer -->
+
+  </div><!-- End Page Wrapper -->
 
 
-    <!-- Scroll To Top -->
-    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+  <!-- Scroll To Top -->
+  <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
 
-    <script src="../js/jquery.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.fancybox.js"></script>
-    <script src="../js/jquery-ui.js"></script>
-    <script src="../js/jquery.countdown.js"></script>
-    <script src="../js/mixitup.js"></script>
-    <script src="../js/wow.js"></script>
-    <script src="../js/appear.js"></script>
-    <script src="../js/select2.min.js"></script>
-    <script src="../js/swiper.min.js"></script>
-    <script src="../js/owl.js"></script>
-    <script src="../js/script.js"></script>
-    <!-- form submit -->
-    <script src="../js/jquery.validate.min.js"></script>
-    <script src="../js/jquery.form.min.js"></script>
-    <script>
-        (function ($) {
-            $("#contact_form").validate({
-                submitHandler: function (form) {
-                    var form_btn = $(form).find('button[type="submit"]');
-                    var form_result_div = '#form-result';
-                    $(form_result_div).remove();
-                    form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-                    var form_btn_old_msg = form_btn.html();
-                    form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-                    $(form).ajaxSubmit({
-                        dataType: 'json',
-                        success: function (data) {
-                            if (data.status == 'true') {
-                                $(form).find('.form-control').val('');
-                            }
-                            form_btn.prop('disabled', false).html(form_btn_old_msg);
-                            $(form_result_div).html(data.message).fadeIn('slow');
-                            setTimeout(function () { $(form_result_div).fadeOut('slow') }, 6000);
-                        }
-                    });
-                }
-            });
-        })(jQuery);
-    </script>
+  <script src="../js/jquery.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.fancybox.js"></script>
+  <script src="../js/jquery-ui.js"></script>
+  <script src="../js/jquery.countdown.js"></script>
+  <script src="../js/mixitup.js"></script>
+  <script src="../js/wow.js"></script>
+  <script src="../js/appear.js"></script>
+  <script src="../js/select2.min.js"></script>
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/owl.js"></script>
+  <script src="../js/script.js"></script>
+  <!-- form submit -->
+  <script src="../js/jquery.validate.min.js"></script>
+  <script src="../js/jquery.form.min.js"></script>
+  <script>
+    (function($) {
+      $("#contact_form").validate({
+        submitHandler: function(form) {
+          var form_btn = $(form).find('button[type="submit"]');
+          var form_result_div = '#form-result';
+          $(form_result_div).remove();
+          form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+          var form_btn_old_msg = form_btn.html();
+          form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+          $(form).ajaxSubmit({
+            dataType: 'json',
+            success: function(data) {
+              if (data.status == 'true') {
+                $(form).find('.form-control').val('');
+              }
+              form_btn.prop('disabled', false).html(form_btn_old_msg);
+              $(form_result_div).html(data.message).fadeIn('slow');
+              setTimeout(function() {
+                $(form_result_div).fadeOut('slow')
+              }, 6000);
+            }
+          });
+        }
+      });
+    })(jQuery);
+  </script>
 </body>
 
 <!-- Mirrored from kodesolution.com/html/2022/oitech-html//News-Details by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:09 GMT -->

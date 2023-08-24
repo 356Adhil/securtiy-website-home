@@ -4,111 +4,108 @@
 <!-- Mirrored from kodesolution.com/html/2022/oitech-html/page-testimonial.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:02 GMT -->
 
 <head>
-    <meta charset="utf-8">
-    <title>Oitech | IT Solutions & Technology HTML Template | Home Page 01</title>
-    <!-- Stylesheets -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Oitech | IT Solutions & Technology HTML Template | Home Page 01</title>
+  <!-- Stylesheets -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/responsive.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/responsive.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 
-    <!-- Responsive -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
-    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
 <body>
 
-    <div class="page-wrapper">
+  <div class="page-wrapper">
 
-        <!-- Preloader -->
-        <div class="preloader"></div>
+    <!-- Preloader -->
+    <div class="preloader"></div>
 
-              <!-- Header -->
-              <%- include('Header.ejs') %>
-              <!-- Header -->
+    <!-- Header -->
+    <%- include('Header.ejs') %>
+    <!-- Header -->
 
-        <!-- Start main-content -->
-        <section class="page-title" style="background-image: url(../images/background/page-title.jpg);">
-            <div class="auto-container">
-                <div class="title-outer">
-                    <h1 class="title">Testimonial</h1>
-                    <ul class="page-breadcrumb">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li>Testimonial</li>
-                    </ul>
+    <!-- Start main-content -->
+    <section class="page-title" style="background-image: url(../images/background/page-title.jpg);">
+      <div class="auto-container">
+        <div class="title-outer">
+          <h1 class="title">Testimonial</h1>
+          <ul class="page-breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Pages</a></li>
+            <li>Testimonial</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- end main-content -->
+
+    <!-- Testimonial Section -->
+    <section>
+      <div class="container">
+        <div class="row">
+          <!-- Testimonial Carousel -->
+          <% for (const testimonial of testimonialData) { %>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="testimonial-block-four">
+              <div class="inner-box">
+                <div class="content-box">
+                  <span class="icon icon-quote"></span>
+                  <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                  </div>
+                  <div class="text">
+                    <%= testimonial.content %>
+                  </div>
                 </div>
-            </div>
-        </section>
-        <!-- end main-content -->
+                <div class="info-box">
+                  <!-- {`https://event-manager.syd1.cdn.digitaloceanspaces.com/${testimonial.image}`}  -->
+                  <figure class="thumb">
+                    <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${testimonial.image}` %>" />
 
-        <!-- Testimonial Section -->
-        <section>
-            <div class="container">
-                <div class="row">
-                    <!-- Testimonial Carousel -->
-                    <% for (const testimonial of testimonialData) { %>
-                        <div class="col-lg-6 col-md-12 col-sm-12">
-                            <div class="testimonial-block-four">
-                                <div class="inner-box">
-                                    <div class="content-box">
-                                        <span class="icon icon-quote"></span>
-                                        <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </div>
-                                        <div class="text">
-                                            <%= testimonial.content %>
-                                        </div>
-                                    </div>
-                                    <div class="info-box">
-                                        <!-- {`https://event-manager.syd1.cdn.digitaloceanspaces.com/${testimonial.image}`}  -->
-                                        <figure class="thumb">
-                                            <img
-                                                src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${testimonial.image}` %>" />
-
-                                        </figure>
-                                        <h5 class="name">
-                                            <%= testimonial.author %>
-                                        </h5>
-                                        <span class="designation">Co Founder</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <% } %>
+                  </figure>
+                  <h5 class="name">
+                    <%= testimonial.author %>
+                  </h5>
+                  <span class="designation">Co Founder</span>
                 </div>
+              </div>
             </div>
-        </section>
-        <!-- End Testimonial Section -->
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </section>
+    <!-- End Testimonial Section -->
 
-                   <!-- Footer -->
-                   <%- include('Footer.ejs') %>
-                   <!-- Footer -->
-    </div><!-- End Page Wrapper -->
+    <!-- Footer -->
+    <%- include('Footer.ejs') %>
+    <!-- Footer -->
+  </div><!-- End Page Wrapper -->
 
 
-    <!-- Scroll To Top -->
-    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+  <!-- Scroll To Top -->
+  <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
 
-    <script src="../js/jquery.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.fancybox.js"></script>
-    <script src="../js/jquery-ui.js"></script>
-    <script src="../js/wow.js"></script>
-    <script src="../js/appear.js"></script>
-    <script src="../js/select2.min.js"></script>
-    <script src="../js/swiper.min.js"></script>
-    <script src="../js/owl.js"></script>
-    <script src="../js/script.js"></script>
+  <script src="../js/jquery.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.fancybox.js"></script>
+  <script src="../js/jquery-ui.js"></script>
+  <script src="../js/wow.js"></script>
+  <script src="../js/appear.js"></script>
+  <script src="../js/select2.min.js"></script>
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/owl.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 
 <!-- Mirrored from kodesolution.com/html/2022/oitech-html/page-testimonial.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:02 GMT -->

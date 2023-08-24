@@ -4,246 +4,238 @@
 <!-- Mirrored from kodesolution.com/html/2022/oitech-html/page-team-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:00 GMT -->
 
 <head>
-    <meta charset="utf-8">
-    <title>Oitech | IT Solutions & Technology HTML Template | Home Page 01</title>
-    <!-- Stylesheets -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Oitech | IT Solutions & Technology HTML Template | Home Page 01</title>
+  <!-- Stylesheets -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/responsive.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/responsive.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 
-    <!-- Responsive -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
-    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
 <body>
 
-    <div class="page-wrapper">
+  <div class="page-wrapper">
 
-        <!-- Preloader -->
-        <div class="preloader"></div>
+    <!-- Preloader -->
+    <div class="preloader"></div>
 
-                <!-- Header -->
-                <%- include('Header.ejs') %>
-                <!-- Header -->
+    <!-- Header -->
+    <%- include('Header.ejs') %>
+    <!-- Header -->
 
-        <!-- Start main-content -->
-        <section class="page-title" style="background-image: url(../images/background/page-title.jpg);">
-            <div class="auto-container">
-                <div class="title-outer">
-                    <h1 class="title">Team Details</h1>
-                    <ul class="page-breadcrumb">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li>Team Details</li>
-                    </ul>
+    <!-- Start main-content -->
+    <section class="page-title" style="background-image: url(../images/background/page-title.jpg);">
+      <div class="auto-container">
+        <div class="title-outer">
+          <h1 class="title">Team Details</h1>
+          <ul class="page-breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Pages</a></li>
+            <li>Team Details</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- end main-content -->
+
+    <!--Team Details Start-->
+    <section class="team-details">
+      <div class="container pb-100">
+        <div class="team-details__top pb-70">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6">
+              <div class="team-details__top-left">
+                <div class="team-details__top-img"> <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${selectedTeam.image }` %>" alt="img">
+                  <div class="team-details__big-text"></div>
                 </div>
+              </div>
             </div>
-        </section>
-        <!-- end main-content -->
+            <div class="col-xl-6 col-lg-6">
+              <div class="team-details__top-right">
+                <div class="team-details__top-content">
+                  <h3 class="team-details__top-name">
+                    <%= selectedTeam.name %>
+                  </h3>
+                  <p class="team-details__top-title">
+                    <%= selectedTeam.designation %>
+                  </p>
+                  <div class="team-details__social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </div>
+                  <p class="team-details__top-text-1">
+                    <%= selectedTeam.description %>
+                  </p>
 
-        <!--Team Details Start-->
-        <section class="team-details">
-            <div class="container pb-100">
-                <div class="team-details__top pb-70">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="team-details__top-left">
-                                <div class="team-details__top-img"> <img
-                                        src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${selectedTeam.image }` %>"
-                                        alt="img">
-                                    <div class="team-details__big-text"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="team-details__top-right">
-                                <div class="team-details__top-content">
-                                    <h3 class="team-details__top-name">
-                                        <%= selectedTeam.name %>
-                                    </h3>
-                                    <p class="team-details__top-title">
-                                        <%= selectedTeam.designation %>
-                                    </p>
-                                    <div class="team-details__social">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fab fa-facebook"></i></a>
-                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                    <p class="team-details__top-text-1">
-                                        <%= selectedTeam.description %>
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
-                <div class="team-details__bottom pt-100">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="team-details__bottom-left">
-                                <h4 class="team-details__bottom-left-title">Personal Experience</h4>
-                                <p class="team-details__bottom-left-text">When an unknown printer took a galley of type
-                                    and scrambled it to make a type specimen book. It has survived not only five
-                                    centuries architecto dolorem ipsum quia</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="team-details__bottom-right">
-                                <div class="team-details__progress">
-                                    <div class="team-details__progress-single">
-                                        <h4 class="team-details__progress-title">Tecnology</h4>
-                                        <div class="bar">
-                                            <div class="bar-inner count-bar" data-percent="90%">
-                                                <div class="count-text">90%</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="team-details__progress-single">
-                                        <h4 class="team-details__progress-title">Marketing</h4>
-                                        <div class="bar">
-                                            <div class="bar-inner count-bar" data-percent="80%">
-                                                <div class="count-text">80%</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="team-details__progress-single">
-                                        <h4 class="team-details__progress-title">Business</h4>
-                                        <div class="bar marb-0">
-                                            <div class="bar-inner count-bar" data-percent="75%">
-                                                <div class="count-text">75%</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
-        <!--Team Details End-->
 
-        <!--Contact Details Start-->
-        <section class="team-contact-form">
-            <div class="container pb-100">
-                <div class="sec-title text-center">
-                    <span class="sub-title">Contact With Us Now</span>
-                    <h2 class="section-title__title">Feel Free to Write Our <br> Tecnology Experts</h2>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <!-- Contact Form -->
-                        <form id="contact_form" name="contact_form" class=""
-                            action="/Contact/submit" method="post">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="mb-3">
-                                        <input name="form_name" class="form-control" type="text"
-                                            placeholder="Enter Name">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="mb-3">
-                                        <input name="form_email" class="form-control required email" type="email"
-                                            placeholder="Enter Email">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="mb-3">
-                                        <input name="form_subject" class="form-control required" type="text"
-                                            placeholder="Enter Subject">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="mb-3">
-                                        <input name="form_phone" class="form-control" type="text"
-                                            placeholder="Enter Phone">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <textarea name="form_message" class="form-control required" rows="5"
-                                    placeholder="Enter Message"></textarea>
-                            </div>
-                            <div class="mb-3 text-center">
-                                <input name="form_botcheck" class="form-control" type="hidden" value="" />
-                                <button type="submit" class="theme-btn btn-style-one"
-                                    data-loading-text="Please wait..."><span class="btn-title">Send
-                                        message</span></button>
-                                <button type="reset" class="theme-btn btn-style-one"><span
-                                        class="btn-title">Reset</span></button>
-                            </div>
-                        </form>
-                        <!-- Contact Form Validation-->
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="team-details__bottom pt-100">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6">
+              <div class="team-details__bottom-left">
+                <h4 class="team-details__bottom-left-title">Personal Experience</h4>
+                <p class="team-details__bottom-left-text">When an unknown printer took a galley of type
+                  and scrambled it to make a type specimen book. It has survived not only five
+                  centuries architecto dolorem ipsum quia</p>
+              </div>
             </div>
-        </section>
-        <!--Contact Details End-->
+            <div class="col-xl-6 col-lg-6">
+              <div class="team-details__bottom-right">
+                <div class="team-details__progress">
+                  <div class="team-details__progress-single">
+                    <h4 class="team-details__progress-title">Tecnology</h4>
+                    <div class="bar">
+                      <div class="bar-inner count-bar" data-percent="90%">
+                        <div class="count-text">90%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="team-details__progress-single">
+                    <h4 class="team-details__progress-title">Marketing</h4>
+                    <div class="bar">
+                      <div class="bar-inner count-bar" data-percent="80%">
+                        <div class="count-text">80%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="team-details__progress-single">
+                    <h4 class="team-details__progress-title">Business</h4>
+                    <div class="bar marb-0">
+                      <div class="bar-inner count-bar" data-percent="75%">
+                        <div class="count-text">75%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Team Details End-->
 
-                    <!-- Footer -->
-                    <%- include('Footer.ejs') %>
-                    <!-- Footer -->
+    <!--Contact Details Start-->
+    <section class="team-contact-form">
+      <div class="container pb-100">
+        <div class="sec-title text-center">
+          <span class="sub-title">Contact With Us Now</span>
+          <h2 class="section-title__title">Feel Free to Write Our <br> Tecnology Experts</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <!-- Contact Form -->
+            <form id="contact_form" name="contact_form" class="" action="/Contact/submit" method="post">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_name" class="form-control" type="text" placeholder="Enter Name">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_subject" class="form-control required" type="text" placeholder="Enter Subject">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <textarea name="form_message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
+              </div>
+              <div class="mb-3 text-center">
+                <input name="form_botcheck" class="form-control" type="hidden" value="" />
+                <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Send
+                    message</span></button>
+                <button type="reset" class="theme-btn btn-style-one"><span class="btn-title">Reset</span></button>
+              </div>
+            </form>
+            <!-- Contact Form Validation-->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Contact Details End-->
 
-    </div><!-- End Page Wrapper -->
+    <!-- Footer -->
+    <%- include('Footer.ejs') %>
+    <!-- Footer -->
+
+  </div><!-- End Page Wrapper -->
 
 
-    <!-- Scroll To Top -->
-    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+  <!-- Scroll To Top -->
+  <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
 
-    <script src="../js/jquery.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.fancybox.js"></script>
-    <script src="../js/jquery-ui.js"></script>
-    <script src="../js/wow.js"></script>
-    <script src="../js/appear.js"></script>
-    <script src="../js/select2.min.js"></script>
-    <script src="../js/swiper.min.js"></script>
-    <script src="../js/owl.js"></script>
-    <script src="../js/script.js"></script>
+  <script src="../js/jquery.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.fancybox.js"></script>
+  <script src="../js/jquery-ui.js"></script>
+  <script src="../js/wow.js"></script>
+  <script src="../js/appear.js"></script>
+  <script src="../js/select2.min.js"></script>
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/owl.js"></script>
+  <script src="../js/script.js"></script>
 
-    <!-- form submit -->
-    <script src="../js/jquery.validate.min.js"></script>
-    <script src="../js/jquery.form.min.js"></script>
-    <script>
-        (function ($) {
-            $("#contact_form").validate({
-                submitHandler: function (form) {
-                    var form_btn = $(form).find('button[type="submit"]');
-                    var form_result_div = '#form-result';
-                    $(form_result_div).remove();
-                    form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-                    var form_btn_old_msg = form_btn.html();
-                    form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-                    $(form).ajaxSubmit({
-                        dataType: 'json',
-                        success: function (data) {
-                            if (data.status == 'true') {
-                                $(form).find('.form-control').val('');
-                            }
-                            form_btn.prop('disabled', false).html(form_btn_old_msg);
-                            $(form_result_div).html(data.message).fadeIn('slow');
-                            setTimeout(function () { $(form_result_div).fadeOut('slow') }, 6000);
-                        }
-                    });
-                }
-            });
-        })(jQuery);
-    </script>
+  <!-- form submit -->
+  <script src="../js/jquery.validate.min.js"></script>
+  <script src="../js/jquery.form.min.js"></script>
+  <script>
+    (function($) {
+      $("#contact_form").validate({
+        submitHandler: function(form) {
+          var form_btn = $(form).find('button[type="submit"]');
+          var form_result_div = '#form-result';
+          $(form_result_div).remove();
+          form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+          var form_btn_old_msg = form_btn.html();
+          form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+          $(form).ajaxSubmit({
+            dataType: 'json',
+            success: function(data) {
+              if (data.status == 'true') {
+                $(form).find('.form-control').val('');
+              }
+              form_btn.prop('disabled', false).html(form_btn_old_msg);
+              $(form_result_div).html(data.message).fadeIn('slow');
+              setTimeout(function() {
+                $(form_result_div).fadeOut('slow')
+              }, 6000);
+            }
+          });
+        }
+      });
+    })(jQuery);
+  </script>
 </body>
 
 <!-- Mirrored from kodesolution.com/html/2022/oitech-html/page-team-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:02 GMT -->
