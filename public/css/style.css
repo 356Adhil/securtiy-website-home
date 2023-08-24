@@ -15506,3 +15506,12 @@ input:focus,
     padding-right: 3%;
   }
 }
+
+
+.icon-img {
+  width: 50px;
+}
+
+.icon-img img {
+  width: 50px;
+}
