@@ -15517,7 +15517,7 @@ input:focus,
 }
 
 .tp-leftarrow tparrows gyges{
-  display: none !important;
+  display: none !important; 
 }
 
 .tp-rightarrow tparrows gyges{
