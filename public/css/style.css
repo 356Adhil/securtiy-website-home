@@ -15515,3 +15515,11 @@ input:focus,
 .icon-img img {
   width: 50px;
 }
+
+.tp-leftarrow tparrows gyges{
+  display: none !important;
+}
+
+.tp-rightarrow tparrows gyges{
+  display: none !important;
+}
