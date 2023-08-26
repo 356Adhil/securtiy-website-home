@@ -4233,11 +4233,12 @@ readers do not read off random characters that represent icons */
   .fab{
     font-family: 'Font Awesome 5 Free';
   }
-  .fa,
+  /* .fa,
   .fas {
     font-family: 'Font Awesome 5 Free';
-    font-weight: 900; } 
+    font-weight: 900; } */
+/* 
     
 .fa{
   font-family: 'Font Awesome 5 Free';
-  font-weight: 900; }
+  font-weight: 900; } */
