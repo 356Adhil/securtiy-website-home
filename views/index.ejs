@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Moopes Group Security Service</title>
+  <title>Moopans Group Security Service</title>
   <!-- Stylesheets -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="../plugins/revolution/css/settings.css" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
@@ -43,7 +43,7 @@
   <div class="page-wrapper">
 
     <!-- Preloader -->
-    <!--<div class="preloader"></div>-->
+    <div class="preloader"></div>
 
     <!-- Main Header-->
     <header class="main-header header-style-two">
@@ -55,7 +55,7 @@
           <div class="top-left">
             <!-- Info List -->
             <ul class="list-style-one">
-              <li><i class="fa fa-envelope"></i> <a href="mailto:needhelp@company.com">
+              <li><i class="fa fa-envelope"></i> <a href="mailto:<%= contactUsData[0].email %>">
                   <%= contactUsData[0].email %>
                 </a></li>
               <li><i class="fa fa-map-marker"></i>
@@ -66,9 +66,7 @@
 
           <div class="top-right">
             <ul class="useful-links">
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -90,7 +88,7 @@
           <!-- Main box -->
           <div class="main-box">
             <div class="logo-box">
-              <div class="logo"><a href="/"><img src="../images/m-logo.png" alt="" title="Oitech"></a></div>
+              <div class="logo"><a href="/"><img src="../images/m-logo.png" alt="" title="Moopans security Dubai"></a></div>
             </div>
 
             <!--Nav Box-->
@@ -136,7 +134,7 @@
         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
         <nav class="menu-box">
           <div class="upper-box">
-            <div class="nav-logo"><a href="/"><img src="../images/logo.png" alt="" title=""></a></div>
+            <div class="nav-logo"><a href="/"><img src="../images/logo.png" alt="" title="Moopans security Dubai"></a></div>
             <div class="close-btn"><i class="icon fa fa-times"></i></div>
           </div>
 
@@ -149,7 +147,7 @@
               <div class="contact-info-box">
                 <i class="icon lnr-icon-phone-handset"></i>
                 <span class="title">Call Now</span>
-                <a href="tel:+92880098670">+92 (8800) - 98670</a>
+                <a href="tel:+971565025899"> +971565 025 899</a>
               </div>
             </li>
             <li>
@@ -157,15 +155,15 @@
               <div class="contact-info-box">
                 <span class="icon lnr-icon-envelope1"></span>
                 <span class="title">Send Email</span>
-                <a href="mailto:help@company.com">help@company.com</a>
+                <a href="mailto:info@msecuritydubai.com">info@msecuritydubai.com</a>
               </div>
             </li>
             <li>
               <!-- Contact Info Box -->
               <div class="contact-info-box">
                 <span class="icon lnr-icon-clock"></span>
-                <span class="title">Send Email</span>
-                Mon - Sat 8:00 - 6:30, Sunday - CLOSED
+                <span class="title">Visit anytime</span>
+                Dubai, United Arab Emirates
               </div>
             </li>
           </ul>
@@ -180,21 +178,7 @@
         </nav>
       </div><!-- End Mobile Menu -->
 
-      <!-- Header Search -->
-      <div class="search-popup">
-        <span class="search-back-drop"></span>
-        <button class="close-search"><span class="fa fa-times"></span></button>
-
-        <div class="search-inner">
-          <form method="post" action="index.html">
-            <div class="form-group">
-              <input type="search" name="search-field" value="" placeholder="Search..." required="">
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <!-- End Header Search -->
+    
 
       <!-- Sticky Header  -->
       <div class="sticky-header">
@@ -252,7 +236,7 @@
               </div>
 
               <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]" data-paddingright="[15,15,15,15]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on" data-type="text" data-height="none" data-width="['700','750','700','450']" data-whitespace="normal" data-hoffset="['0','0','0','0']" data-voffset="['185','185','200','185']" data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']" data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                <a href="tel:+92880098670" class="theme-btn btn-style-one"><span class="btn-title">Call Us</span></a>
+                <a href="tel:+971565025899" class="theme-btn btn-style-one"><span class="btn-title">Call Us</span></a>
                 <a href="/contact" class="theme-btn btn-style-one"><span class="btn-title">Contact Us</span></a>
               </div>
             </li>
@@ -351,7 +335,7 @@
               <figure class="image-2 overlay-anim wow fadeInRight"><img src="../images/resource/about-2.jpg" alt="">
               </figure>
               <div class="experience bounce-y">
-                <img src="../images/resource/image-1.jpg" alt="" class="icon">
+                <img src="../images/m_icon.png" alt="" class="icon">
                 <strong>3600+</strong> Satisfied Client
               </div>
             </div>
@@ -376,7 +360,7 @@
               <div class="image-box">
                 <figure class="image"><a href="/service-details/<%= ourServiceData[0]._id %>"><img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${ourServiceData[0].image }` %>" alt=""></a></figure>
                 <div class="icon-box">
-                  <img src="../images/icons/profit.png" class="icon-img" alt="" title="">
+                  <img src="../images/m_icon.png" class="icon-img" alt="" title="">
                 </div>
               </div>
               <div class="content-box">
@@ -386,7 +370,7 @@
                 <div class="text">
                   <%= ourServiceData[0].description.substring(0, 70) %>...
                 </div>
-                <a href="/service-details/<%= ourServiceData[0]._id %>" class="read-more">read More <i class="fa fa-long-arrow-alt-right"></i></a>
+                <a href="/service-details/<%= ourServiceData[0]._id %>" class="read-more">read More</a>
               </div>
             </div>
           </div>
@@ -396,7 +380,7 @@
             <div class="inner-box">
               <div class="image-box">
                 <figure class="image"><a href="/service-details/<%= ourServiceData[1]._id %>"><img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${ourServiceData[1].image }` %>" alt=""></a></figure>
-                <div class="icon-box"> <img src="../images/icons/profit.png" class="icon-img" alt="" title="">
+                <div class="icon-box"> <img src="../images/m_icon.png" class="icon-img" alt="" title="">
                 </div>
               </div>
               <div class="content-box">
@@ -406,7 +390,7 @@
                 <div class="text">
                   <%= ourServiceData[1].description.substring(0, 70) %>...
                 </div>
-                <a href="/service-details/<%= ourServiceData[1]._id %>" class="read-more">read More <i class="fa fa-long-arrow-alt-right"></i></a>
+                <a href="/service-details/<%= ourServiceData[1]._id %>" class="read-more">read More</a>
               </div>
             </div>
           </div>
@@ -416,7 +400,7 @@
             <div class="inner-box">
               <div class="image-box">
                 <figure class="image"><a href="/service-details/<%= ourServiceData[2]._id %>"><img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${ourServiceData[2].image }` %>" alt=""></a></figure>
-                <div class="icon-box"> <img src="../images/icons/profit.png" class="icon-img" alt="" title="">
+                <div class="icon-box"> <img src="../images/m_icon.png" class="icon-img" alt="" title="">
                 </div>
               </div>
               <div class="content-box">
@@ -426,7 +410,7 @@
                 <div class="text">
                   <%= ourServiceData[2].description.substring(0, 70) %>...
                 </div>
-                <a href="/service-details/<%= ourServiceData[2]._id %>">Read More <i class="fa fa-long-arrow-alt-right"></i></a>
+                <a href="/service-details/<%= ourServiceData[2]._id %>" class="read-more">read More </a>
               </div>
             </div>
           </div>
@@ -447,10 +431,10 @@
                 <h5 class="vision_p">
                   <%= aboutUsData[0].vision %>
                 </h5>
-                <div class="text">Our Mission</div>
-              </div>
+                <span class="sub-title">Our Mission</span>
+
+            </div>
               <div class="info-box">
-                <i class="fa-regular fa-lightbulb"></i>
                 <h5 class="title">
                   <%= aboutUsData[0].mission %><br>
                 </h5>
@@ -476,7 +460,7 @@
                     <a href="<%= aboutUsData[0].videoLink %>" class="play-now-two lightbox-image"><i class="icon fa fa-play"></i></a>
                   </div>
                   <div class="title-box">
-                    <h5 class="title">Professional IT technology services you can trust</h5>
+                    <h5 class="title">Moopans Security Services</h5>
                   </div>
                 </div>
               </div>

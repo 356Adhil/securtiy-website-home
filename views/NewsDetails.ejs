@@ -1,34 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from kodesolution.com/html/2022/oitech-html//News-Details by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:09 GMT -->
-
-<head>
-  <meta charset="utf-8">
-  <title>Oitech | IT Solutions & Technology HTML Template | Home Page 01</title>
-  <!-- Stylesheets -->
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/responsive.css" rel="stylesheet">
-
-  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
-  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
-
-  <!-- Responsive -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
-  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-</head>
-
-<body>
-
-  <div class="page-wrapper">
-
-    <!-- Preloader -->
-    <div class="preloader"></div>
-
     <!-- Header -->
     <%- include('Header.ejs') %>
     <!-- Header -->
@@ -88,7 +60,7 @@
                     <div class="sidebar__post-image"> <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${newsItem.image }` %>" alt="">
                     </div>
                     <div class="sidebar__post-content">
-                      <h3> <span class="sidebar__post-content-meta"><i class="fas fa-user-circle"></i>Admin</span> <a href="/news-details/<%= newsItem._id %>">
+                      <h3> <span class="sidebar__post-content-meta">Admin</span> <a href="/news-details/<%= newsItem._id %>">
                           <%= newsItem.title %>
                         </a>
                       </h3>
@@ -105,62 +77,9 @@
     </section>
     <!--Blog Details End-->
 
+  
     <!-- Footer -->
     <%- include('Footer.ejs') %>
     <!-- Footer -->
-
-  </div><!-- End Page Wrapper -->
-
-
-  <!-- Scroll To Top -->
-  <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-
-
-  <script src="../js/jquery.js"></script>
-  <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/jquery.fancybox.js"></script>
-  <script src="../js/jquery-ui.js"></script>
-  <script src="../js/jquery.countdown.js"></script>
-  <script src="../js/mixitup.js"></script>
-  <script src="../js/wow.js"></script>
-  <script src="../js/appear.js"></script>
-  <script src="../js/select2.min.js"></script>
-  <script src="../js/swiper.min.js"></script>
-  <script src="../js/owl.js"></script>
-  <script src="../js/script.js"></script>
-  <!-- form submit -->
-  <script src="../js/jquery.validate.min.js"></script>
-  <script src="../js/jquery.form.min.js"></script>
-  <script>
-    (function($) {
-      $("#contact_form").validate({
-        submitHandler: function(form) {
-          var form_btn = $(form).find('button[type="submit"]');
-          var form_result_div = '#form-result';
-          $(form_result_div).remove();
-          form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-          var form_btn_old_msg = form_btn.html();
-          form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-          $(form).ajaxSubmit({
-            dataType: 'json',
-            success: function(data) {
-              if (data.status == 'true') {
-                $(form).find('.form-control').val('');
-              }
-              form_btn.prop('disabled', false).html(form_btn_old_msg);
-              $(form_result_div).html(data.message).fadeIn('slow');
-              setTimeout(function() {
-                $(form_result_div).fadeOut('slow')
-              }, 6000);
-            }
-          });
-        }
-      });
-    })(jQuery);
-  </script>
 </body>
-
-<!-- Mirrored from kodesolution.com/html/2022/oitech-html//News-Details by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:09 GMT -->
-
 </html>

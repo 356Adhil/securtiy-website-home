@@ -1,33 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from kodesolution.com/html/2022/oitech-html/page-services.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:02 GMT -->
-
-<head>
-  <meta charset="utf-8">
-  <title>Moopans Group | Security Services</title>
-  <!-- Stylesheets -->
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/responsive.css" rel="stylesheet">
-
-  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
-  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
-
-  <!-- Responsive -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
-  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-</head>
-
-<body>
-
-  <div class="page-wrapper">
-
-    <!-- Preloader -->
-    <div class="preloader"></div>
 
     <!-- Header -->
     <%- include('Header.ejs') %>
@@ -39,8 +12,7 @@
         <div class="title-outer">
           <h1 class="title">Services</h1>
           <ul class="page-breadcrumb">
-            <li><a href="index-2.html">Home</a></li>
-            <li><a href="#">Pages</a></li>
+            <li><a href="/">Home</a></li>
             <li>Services</li>
           </ul>
         </div>
@@ -59,16 +31,19 @@
             <div class="inner-box">
               <div class="image-box">
                 <figure class="image"><a href="#"><img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${service.image }` %>" alt="<%= service.title %>"></a></figure>
-                <div class="icon-box"><i class="icon flaticon-business-010-startup"></i></div>
+                <div class="icon-box">
+                  
+                  <img src="../images/m_icon.png">
+                </div>
               </div>
               <div class="content-box">
                 <h5 class="title"><a href="/service-details/<%= service._id %>">
                     <%= service.title %>
                   </a></h5>
                 <div class="text">
-                  <%= service.description.substring(0, 70) %>...
+                  <%= service.description.substring(0, 130) %>...
                 </div>
-                <a href="/service-details/<%= service._id %>" class="read-more">read More <i class="fa fa-long-arrow-alt-right"></i></a>
+                <a href="/service-details/<%= service._id %>" class="read-more">read More </a>
               </div>
             </div>
           </div>
@@ -83,27 +58,5 @@
     <!-- Footer -->
     <%- include('Footer.ejs') %>
     <!-- Footer -->
-
-  </div><!-- End Page Wrapper -->
-
-
-  <!-- Scroll To Top -->
-  <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-
-
-  <script src="../js/jquery.js"></script>
-  <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/jquery.fancybox.js"></script>
-  <script src="../js/jquery-ui.js"></script>
-  <script src="../js/wow.js"></script>
-  <script src="../js/appear.js"></script>
-  <script src="../js/select2.min.js"></script>
-  <script src="../js/swiper.min.js"></script>
-  <script src="../js/owl.js"></script>
-  <script src="../js/script.js"></script>
 </body>
-
-<!-- Mirrored from kodesolution.com/html/2022/oitech-html/page-services.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:02 GMT -->
-
 </html>

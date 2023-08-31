@@ -1,33 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from kodesolution.com/html/2022/oitech-html/page-contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:09 GMT -->
-
-<head>
-  <meta charset="utf-8">
-  <title>Moopans Group | Security Services</title>
-  <!-- Stylesheets -->
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/responsive.css" rel="stylesheet">
-
-  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
-  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
-
-  <!-- Responsive -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
-  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-</head>
-
-<body>
-
-  <div class="page-wrapper">
-
-    <!-- Preloader -->
-    <div class="preloader"></div>
 
     <!-- Header -->
     <%- include('Header.ejs') %>
@@ -39,7 +12,7 @@
         <div class="title-outer">
           <h1 class="title">Contact Us</h1>
           <ul class="page-breadcrumb">
-            <li><a href="index-2.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li>Contact</li>
           </ul>
         </div>
@@ -105,8 +78,7 @@
               <ul class="list-unstyled contact-details__info">
                 <li>
                   <div class="icon">
-                    <span class="lnr-icon-phone-plus"></span>
-                  </div>
+                    <img src="../images/icons/call_icon.svg" class="icon-img" alt="" title="">                  </div>
                   <div class="text">
                     <h6>Have any question?</h6>
                     <a href="tel:980089850"><span>Free</span>
@@ -116,7 +88,7 @@
                 </li>
                 <li>
                   <div class="icon">
-                    <span class="lnr-icon-envelope1"></span>
+                    <img src="../images/icons/mail_icon.svg" class="icon-img" alt="" title="">      
                   </div>
                   <div class="text">
                     <h6>Write email</h6>
@@ -127,7 +99,7 @@
                 </li>
                 <li>
                   <div class="icon">
-                    <span class="lnr-icon-location"></span>
+                    <img src="../images/icons/send_icon.svg" class="icon-img" alt="" title="">      
                   </div>
                   <div class="text">
                     <h6>Visit anytime</h6>
@@ -157,58 +129,5 @@
     <!-- Footer -->
     <%- include('Footer.ejs') %>
     <!-- Footer -->
-
-  </div><!-- End Page Wrapper -->
-
-
-  <!-- Scroll To Top -->
-  <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-
-
-  <script src="../js/jquery.js"></script>
-  <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/jquery.fancybox.js"></script>
-  <script src="../js/jquery-ui.js"></script>
-  <script src="../js/wow.js"></script>
-  <script src="../js/appear.js"></script>
-  <script src="../js/select2.min.js"></script>
-  <script src="../js/swiper.min.js"></script>
-  <script src="../js/owl.js"></script>
-  <script src="../js/script.js"></script>
-
-  <!-- form submit -->
-  <script src="../js/jquery.validate.min.js"></script>
-  <script src="../js/jquery.form.min.js"></script>
-  <script>
-    (function($) {
-      $("#contact_form").validate({
-        submitHandler: function(form) {
-          var form_btn = $(form).find('button[type="submit"]');
-          var form_result_div = '#form-result';
-          $(form_result_div).remove();
-          form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-          var form_btn_old_msg = form_btn.html();
-          form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-          $(form).ajaxSubmit({
-            dataType: 'json',
-            success: function(data) {
-              if (data.status == 'true') {
-                $(form).find('.form-control').val('');
-              }
-              form_btn.prop('disabled', false).html(form_btn_old_msg);
-              $(form_result_div).html(data.message).fadeIn('slow');
-              setTimeout(function() {
-                $(form_result_div).fadeOut('slow')
-              }, 6000);
-            }
-          });
-        }
-      });
-    })(jQuery);
-  </script>
 </body>
-
-<!-- Mirrored from kodesolution.com/html/2022/oitech-html/page-contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2023 05:12:09 GMT -->
-
 </html>

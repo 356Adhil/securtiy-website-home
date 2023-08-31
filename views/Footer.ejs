@@ -69,7 +69,6 @@
                             <li><a href="/about">About Company</a></li>
                             <li><a href="/team">Meet the Team</a></li>
                             <li><a href="/newsGrid">News & Media</a></li>
-                            <li><a href="/our-projects">Our Projects</a></li>
                             <li><a href="/services">Services</a></li>
                             <li><a href="/contact">Contact</a></li>
                         </ul>
@@ -85,11 +84,11 @@
                                 <%= contactUsData[0].address %>
                             </div>
                             <ul class="contact-info">
-                                <li><i class="fa fa-envelope"></i> <a href="mailto:needhelp@yourdomain.com"></a>
+                                <li><i class="fa fa-envelope"></i> <a href="mailto:<%= contactUsData[0].email %>"></a>
                                     <%= contactUsData[0].email %>
                                         </a><br>
                                 </li>
-                                <li><i class="fa fa-phone-square"></i> <a href="tel:+926668880000">
+                                <li><i class="fa fa-phone-square"></i> <a href="tel:<%= contactUsData[0].mobile %>">
                                         <%= contactUsData[0].mobile %>
                                     </a><br></li>
                             </ul>
@@ -125,7 +124,7 @@
     <div class="footer-bottom">
         <div class="auto-container">
             <div class="inner-container">
-                <div class="copyright-text">&copy; Copyright 2022 by <a href="/">Company.com</a>
+                <div class="copyright-text">&copy; Copyright 2023 by <a href="http://datahex.in/" target="_blank">datahex.in</a>
                 </div>
 
 
@@ -150,7 +149,18 @@
 <script src="../plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script src="../plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
 <script src="../js/main-slider-script.js"></script>
-<!--Revolution Slider-->
+
+
+    <!-- Footer -->
+</div><!-- End Page Wrapper -->
+
+
+<!-- Scroll To Top -->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+
+<script src="../js/jquery.js"></script>
+<script src="../js/popper.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jquery.fancybox.js"></script>
 <script src="../js/jquery-ui.js"></script>
@@ -160,3 +170,38 @@
 <script src="../js/swiper.min.js"></script>
 <script src="../js/owl.js"></script>
 <script src="../js/script.js"></script>
+
+
+</div><!-- End Page Wrapper -->
+
+
+<!-- form submit -->
+<script src="../js/jquery.validate.min.js"></script>
+<script src="../js/jquery.form.min.js"></script>
+<script>
+  (function($) {
+    $("#contact_form").validate({
+      submitHandler: function(form) {
+        var form_btn = $(form).find('button[type="submit"]');
+        var form_result_div = '#form-result';
+        $(form_result_div).remove();
+        form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+        var form_btn_old_msg = form_btn.html();
+        form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+        $(form).ajaxSubmit({
+          dataType: 'json',
+          success: function(data) {
+            if (data.status == 'true') {
+              $(form).find('.form-control').val('');
+            }
+            form_btn.prop('disabled', false).html(form_btn_old_msg);
+            $(form_result_div).html(data.message).fadeIn('slow');
+            setTimeout(function() {
+              $(form_result_div).fadeOut('slow')
+            }, 6000);
+          }
+        });
+      }
+    });
+  })(jQuery);
+</script>
