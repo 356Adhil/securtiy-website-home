@@ -28,7 +28,7 @@ exports.getFaq = async (req, res) => {
   try {
     const { id, skip, limit, searchkey } = req.query;
     if (id && mongoose.isValidObjectId(id)) {
-      const response = await Faq.findById(id).populate("franchise");
+      const response = await Faq.findById(id).populate("ourService");
       return res.status(200).json({
         success: true,
         message: `Retrieved faq`,
@@ -36,13 +36,13 @@ exports.getFaq = async (req, res) => {
       });
     }
     const query = searchkey
-      ? { ...req.filter, question: { $regex: searchkey, $options: "i" } }
+      ? { ...req.filter, title: { $regex: searchkey, $options: "i" } }
       : req.filter;
     const [totalCount, filterCount, data] = await Promise.all([
       parseInt(skip) === 0 && Faq.countDocuments(),
       parseInt(skip) === 0 && Faq.countDocuments(query),
       Faq.find(query)
-        .populate("franchise")
+        .populate("ourService")
         .skip(parseInt(skip) || 0)
         .limit(parseInt(limit) || 50),
     ]);
@@ -106,26 +106,6 @@ exports.deleteFaq = async (req, res) => {
     res.status(400).json({
       success: false,
       message: err,
-    });
-  }
-};
-
-// @desc      GET BY FRANCHISE
-// @route     GET /api/v1/faq/get-by-faq
-// @access    private
-exports.getByFranchise = async (req, res) => {
-  try {
-    const { id } = req.query;
-    const response = await Faq.find({ franchise: id });
-    res.status(201).json({
-      message: "Successfully retrieved",
-      data: response,
-    });
-  } catch (err) {
-    console.log("Error:", err);
-    res.status(500).json({
-      error: "Internal server error",
-      success: false,
     });
   }
 };

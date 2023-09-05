@@ -2,18 +2,15 @@ const mongoose = require("mongoose");
 
 const FaqSchema = new mongoose.Schema(
   {
-    question: {
+    title: {
       type: String,
     },
-    answer: {
+    description: {
       type: String,
     },
-    link: {
-      type: String,
-    },
-    franchise: {
+    ourService: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Franchise",
+      ref: "OurService",
     },
   },
   { timestamps: true }

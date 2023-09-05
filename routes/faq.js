@@ -5,7 +5,6 @@ const {
   getFaq,
   updateFaq,
   deleteFaq,
-  getByFranchise,
 } = require("../controllers/faq");
 // Middleware
 const { protect, authorize } = require("../middleware/auth");
@@ -17,7 +16,5 @@ router
   .get(reqFilter, getFaq)
   .put(updateFaq)
   .delete(deleteFaq);
-
-router.get("/get-by-faq", getByFranchise);
 
 module.exports = router;
