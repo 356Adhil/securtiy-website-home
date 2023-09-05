@@ -68,21 +68,21 @@
               </p>
 
               <div class=" mt-25">
-                <h3>Frequently Asked Question</h3>
                 <!-- <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui
                                     dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta
                                     sunt explicabo.</p> -->
                 <ul class="accordion-box wow fadeInRight">
                   <!--Block-->
-                  <% for (const faq of faqData) { %>
+                  <% for (const faq of selectedFaq) { %>
+
                   <li class="accordion block">
-                    <div class="acc-btn">I <%= faq.question %>
+                    <div class="acc-btn"><%= faq.title %>
                       <div class="icon fa fa-plus"></div>
                     </div>
                     <div class="acc-content">
                       <div class="content">
                         <div class="text">
-                          <%= faq.answer %>
+                          <%= faq.description %>
                         </div>
                       </div>
                     </div>

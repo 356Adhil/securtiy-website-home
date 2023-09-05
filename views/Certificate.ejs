@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Start main-content -->
+    <!-- <section class="page-title" style="background-image: url(../images/background/page-title.jpg);"> -->
+      <div class="auto-container">
+        <div class="title-outer">
+          <u>
+          <h1 class="title">Certificates</h1>
+        </u>
+          <!-- <ul class="page-breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li>Team</li>
+          </ul> -->
+        </div>
+      </div>
+    <!-- </section> -->
+    <!-- end main-content -->
+
+    <!-- Team Section -->
+    <section class="">
+      <div class="container pb-70">
+        <div class="row">
+          <!-- Team Block -->
+
+
+          <!-- Team Block -->
+
+
+          <!-- Team Block -->
+          <% for (const certificate of certificateData) { %>
+          <div class="team-block col-lg-3 col-md-6 col-sm-12">
+            <div class="inner-box">
+              <div class="image-box">
+                <figure class="image">
+                  <a href="/team-details/<%= certificate._id %>" class="lightbox-image">
+                    <img src="<%= `https://event-manager.syd1.cdn.digitaloceanspaces.com/${ certificate.image }` %>" alt="<%= certificate.title %>">
+                  </a>
+                </figure>
+              </div>
+              <div class="info-box">
+                    <%= certificate.title %>
+                  </a></h5>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </section>
+    <!--End Team Section -->
+
+</body>
+</html>

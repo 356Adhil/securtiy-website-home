@@ -44,6 +44,7 @@ const NewsRouter = require("./routes/EjsNewsDetails");
 const gridRouter = require("./routes/EjsNewsgrid");
 const AboutRouter = require("./routes/EjsAbout");
 const ContactRouter = require("./routes/EjsContact");
+const CareerRouter = require("./routes/EjsCareer");
 
 const faqRouter = require("./routes/EjsFaq");
 const services_detailsRouter = require("./routes/EjsServices-details");
@@ -103,6 +104,7 @@ app.use("/News-Details", NewsRouter);
 app.use("/newsgrid", gridRouter);
 app.use("/About", AboutRouter);
 app.use("/Contact", ContactRouter);
+app.use("/Career", CareerRouter);
 app.use("/faq", faqRouter);
 app.use("/service-details", services_detailsRouter);
 app.use("/services", servicesRouter);

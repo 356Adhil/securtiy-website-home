@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <!-- Header -->
+    <%- include('Header.ejs') %>
+    <!-- Header -->
+
+    <!-- Start main-content -->
+    <section class="page-title" style="background-image: url(../images/background/page-title.jpg);">
+      <div class="auto-container">
+        <div class="title-outer">
+          <h1 class="title">Career</h1>
+          <ul class="page-breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li>Career</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- end main-content -->
+
+    <!--Contact Details Start-->
+    <section class="contact-details">
+      <div class="container ">
+        <div class="row">
+          <div class="col-xl-7 col-lg-6">
+            <div class="sec-title">
+              <span class="sub-title">Career</span>
+              <h2>Register</h2>
+            </div>
+            <!-- Contact Form -->
+            <form id="contact_form" name="contact_form" class="" action="/Career/submit" method="post" enctype="multipart/form-data">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_name" class="form-control" type="text" placeholder="Enter Name">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-3">
+                      <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="mb-3">
+                      <select name="form_gender" class="form-control required">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_height" class="form-control" type="text" placeholder="Enter Your Height">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_weight" class="form-control" type="text" placeholder="Enter Your Weight">
+                  </div>
+                </div>
+            </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_age" class="form-control" type="text" placeholder="Enter Your Age">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_nationality" class="form-control" type="text" placeholder="Enter Your Nationality">
+                  </div>
+                </div>
+            </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_passportNumber" class="form-control" type="text" placeholder="Enter Your Passport Number">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_emiratesId" class="form-control" type="text" placeholder="Enter Your Emirates Id">
+                  </div>
+                </div>
+            </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_siraId" class="form-control" type="text" placeholder="Enter Your Sira Id">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <input name="form_siraCardType" class="form-control" type="text" placeholder="Enter Your Sira Card Type">
+                  </div>
+                </div>
+            </div>
+              <div class="mb-3">
+                <input name="form_upload" class="form-control" type="file" placeholder="Upload Image">
+              </div>
+              <div class="mb-3">
+                <input name="form_botcheck" class="form-control" type="hidden" value="" />
+                <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Send
+                    message</span></button>
+                <button type="reset" class="theme-btn btn-style-one"><span class="btn-title">Reset</span></button>
+                <!-- <button type="reset" class="theme-btn btn-style-one"><span
+                                        class="btn-title">Whatsapp Us</span></button> -->
+              </div>
+            </form>
+            <!-- Contact Form Validation-->
+          </div>
+          <div class="col-xl-5 col-lg-6">
+            <div class="contact-details__right">
+              <div class="sec-title">
+                <span class="sub-title">Need any help?</span>
+                <h2>Get in touch with us</h2>
+              </div>
+              <ul class="list-unstyled contact-details__info">
+                <li>
+                  <div class="icon">
+                    <img src="../images/icons/call_icon.svg" class="icon-img" alt="" title="">                  </div>
+                  <div class="text">
+                    <h6>Have any question?</h6>
+                    <a href="tel:980089850"><span>Free</span>
+                      <%= contactUsData[0].mobile %>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <img src="../images/icons/mail_icon.svg" class="icon-img" alt="" title="">      
+                  </div>
+                  <div class="text">
+                    <h6>Write email</h6>
+                    <a href="mailto:needhelp@company.com">
+                      <%= contactUsData[0].email %>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon">
+                    <img src="../images/icons/send_icon.svg" class="icon-img" alt="" title="">      
+                  </div>
+                  <div class="text">
+                    <h6>Visit anytime</h6>
+                    <span>
+                      <%= contactUsData[0].address %>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Contact Details End-->
+
+    <!-- Divider: Google Map -->
+    <section>
+      <div class="container-fluid p-0">
+        <div class="row">
+          <!-- Google Map HTML Codes -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.843149788316!2d144.9537131159042!3d-37.81714274201087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sbn!2sbd!4v1583760510840!5m2!1sbn!2sbd" data-tm-width="100%" height="500" frameborder="0" allowfullscreen=""></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <%- include('Footer.ejs') %>
+    <!-- Footer -->
+</body>
+</html>

@@ -19,6 +19,11 @@ router.get("/:id", async (req, res, next) => {
     const galleryPromise = await Gallery.find()
     
     const selectedService = await OurService.findOne({ _id: serviceId });
+
+    const selectedFaq = await faq.find({ourService: selectedService._id})
+    
+    console.log("selectedFaq :")
+    console.log(selectedFaq)
     
     // Wait for all API requests to complete
     const [contactUsResponse, galleryResponse] = await Promise.all([contactUsPromise, galleryPromise]);
@@ -34,6 +39,7 @@ router.get("/:id", async (req, res, next) => {
     console.log(selectedService)
 
     // Log the fetched data
+    console.log("Service Faq : ", selectedFaq.title)
     console.log("Fetched Service Data:", serviceData);
     console.log("Fetched FAQ Data:", faqData);
     console.log("Contact Us Data:", contactUsData);
@@ -47,6 +53,7 @@ router.get("/:id", async (req, res, next) => {
       faqData,
       contactUsData,
       selectedService, // Pass the selected service to the template
+      selectedFaq,
     });
   } catch (error) {
     console.error("Error fetching data:", error);
