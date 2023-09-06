@@ -2090,7 +2090,7 @@ Main Header
 .main-menu .navigation > li {
   position: relative;
   float: left;
-  padding: 25px 0px;
+  padding: 20px 0px;
   margin-right: 55px;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
@@ -2133,7 +2133,7 @@ Main Header
 .main-menu .navigation > li > a .icon {
   position: relative;
   font-size: 22px;
-  line-height: 24px;
+  line-height: auto;
   margin-left: 10px;
 }
 .main-menu .navigation > li > a:hover {
@@ -2417,7 +2417,7 @@ Header Style One
   -ms-flex-pack: center;
   justify-content: center;
   margin-top: -40px;
-  padding: 20px 20px;
+  padding: 10px 20px;
   background-color: var(--bg-theme-color1);
   border-right: 10px solid var(--border-theme-color2);
 }
@@ -15514,7 +15514,6 @@ input:focus,
   }
 }
 
-
 .icon-img {
   width: 50px;
 }
@@ -15523,10 +15522,13 @@ input:focus,
   width: 50px;
 }
 
-.tp-leftarrow tparrows gyges{
-  display: none !important; 
-}
-
-.tp-rightarrow tparrows gyges{
+.tp-leftarrow tparrows gyges {
   display: none !important;
 }
+
+.tp-rightarrow tparrows gyges {
+  display: none !important;
+}
+
+
+
